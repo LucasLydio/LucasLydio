@@ -90,8 +90,8 @@
         React (TSX) + Vite • Node.js + TypeScript • Typed forms & submissions flow
       </p>
       <p>
-        <a href="REPLACE_WITH_REPO_URL"><b>Repository</b></a> •
-        <a href="REPLACE_WITH_LIVE_URL"><b>Live</b></a>
+        <a href="https://github.com/LucasLydio/forms-frontend.git"><b>Repository</b></a> •
+        <a href="#"><b>Live</b></a>
       </p>
       <p>
         <sub>Highlights: auth, validations, clean API contracts, modular services</sub>
@@ -103,8 +103,8 @@
         Angular • Node.js • Platform-style app with clean modules & services
       </p>
       <p>
-        <a href="REPLACE_WITH_REPO_URL"><b>Repository</b></a> •
-        <a href="REPLACE_WITH_LIVE_URL"><b>Live</b></a>
+        <a href="https://github.com/LucasLydio/infoTechWeb.git"><b>Repository</b></a> •
+        <a href="#"><b>Live</b></a>
       </p>
       <p>
         <sub>Highlights: scalable structure, feature modules, REST patterns</sub>
