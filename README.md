@@ -13,13 +13,13 @@
   </p>
 
   <p>
-    <a href="YOUR_PORTFOLIO">
+    <a href="#">
       <img alt="Portfolio" src="https://img.shields.io/badge/Portfolio-071108?style=for-the-badge&logo=vercel&logoColor=white" />
     </a>
-    <a href="YOUR_LINKEDIN">
+    <a href="https://www.linkedin.com/in/lucas-lydio-8231b436b/">
       <img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-364652?style=for-the-badge&logo=linkedin&logoColor=white" />
     </a>
-    <a href="mailto:YOUR_EMAIL">
+    <a href="mailto:lucaslydiotelecom@gmail.com">
       <img alt="Email" src="https://img.shields.io/badge/Email-BFB1C1?style=for-the-badge&logo=gmail&logoColor=071108" />
     </a>
   </p>
