@@ -142,9 +142,9 @@
 
 ## 🤝 Contact
 
-- Portfolio: **YOUR_PORTFOLIO**
-- LinkedIn: **YOUR_LINKEDIN**
-- Email: **YOUR_EMAIL**
+- Portfolio: **https://lucaslydio-portifolio.netlify.app/**
+- LinkedIn: **https://www.linkedin.com/in/lucas-lydio-8231b436b/**
+- Email: **lucaslydiotelecom@gmail.com**
 
 <div align="center">
   <sub>Backend-first • clean APIs • strong typing • consistent delivery</sub>
