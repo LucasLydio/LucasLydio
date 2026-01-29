@@ -13,7 +13,7 @@
   </p>
 
   <p>
-    <a href="https://lucaslydio-portifolio.netlify.app/">
+    <a href="https://lucaslydio-portfolio.netlify.app/">
       <img alt="Portfolio" src="https://img.shields.io/badge/Portfolio-071108?style=for-the-badge&logo=vercel&logoColor=white" />
     </a>
     <a href="https://www.linkedin.com/in/lucas-lydio-8231b436b/">
