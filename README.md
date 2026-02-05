@@ -133,9 +133,6 @@
   <img src="https://streak-stats.demolab.com?user=LucasLydio" alt="GitHub streak" />
 </div>
 
-<p align="center">
-  <img src="./generated/streak.svg" alt="My custom streak" />
-</p>
 
 ## 🧠 Top languages
 
@@ -143,10 +140,6 @@
   <img src="https://raw.githubusercontent.com/LucasLydio/LucasLydio/main/generated/top-languages.svg" alt="Top languages" />
 </p>
 
-<div align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=LucasLydio&show_icons=true&hide_title=true&include_all_commits=true&count_private=true" alt="GitHub stats" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=LucasLydio&layout=compact&langs_count=8" alt="Top languages" />
-</div>
 
 ---
 

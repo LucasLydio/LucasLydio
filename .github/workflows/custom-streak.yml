@@ -1,4 +1,4 @@
-name: Generate Custom Streak SVG
+name: Generate Custom Streak SVG (Minimal)
 
 on:
   push:
@@ -25,8 +25,9 @@ jobs:
           mkdir -p generated
 
           python3 - << 'PY'
-          import os, json, urllib.request
+          import os, json, re, base64, urllib.request
           from datetime import datetime, timezone, timedelta
+          from pathlib import Path
 
           token = os.environ["GH_TOKEN"]
           user = os.environ["GH_USER"]
@@ -80,17 +81,14 @@ jobs:
             for d in w.get("contributionDays", []):
               days.append((d["date"], int(d["contributionCount"])))
 
-          # ---- Compute streak (consecutive days up to today, allow timezone ambiguity by checking today & yesterday) ----
-          # GitHub dates are YYYY-MM-DD; treat them as calendar days.
+          # ---- Compute streak (today or yesterday, UTC) ----
           today = datetime.now(timezone.utc).date()
           yesterday = today - timedelta(days=1)
 
           by_date = {dt: cnt for dt, cnt in days}
-
           def has_contrib(day):
             return by_date.get(day.isoformat(), 0) > 0
 
-          # If no contrib today, start from yesterday (common if you haven't pushed today UTC).
           start_day = today if has_contrib(today) else yesterday
 
           streak = 0
@@ -101,97 +99,166 @@ jobs:
 
           updated = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
-          # ---- GitHub-safe SVG (no rgba(), no feDropShadow) ----
-          W, H = 900, 260
-          padding = 40
-          card_rx = 28
+          # ---- Optional: embed Delius font if present in repo ----
+          font_face_css = ""
+          font_path = Path("assets/fonts/DeliusCursive.woff2")
+          if font_path.exists():
+            b64 = base64.b64encode(font_path.read_bytes()).decode("ascii")
+            font_face_css = f"""
+            @font-face {{
+              font-family: 'DeliusCursive';
+              src: url(data:font/woff2;base64,{b64}) format('woff2');
+              font-style: normal;
+              font-weight: 400;
+            }}
+            """
 
-          font_stack = "Delius, ui-rounded, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto"
+          # ---- Optional: embed devicon SVGs from repo (inline, sanitized) ----
+          # Put your devicon svgs here: assets/devicons/react.svg etc.
+          icon_names = ["react", "angular", "nodejs", "docker"]
+          icon_dir = Path("assets/devicons")
 
-          # Small progress ring-ish bar (visual)
-          # cap streak for bar to 30 for nicer visuals
+          def sanitize_svg(svg_text: str) -> str:
+            # remove XML/doctype, scripts, and hard fills (we color via currentColor)
+            svg_text = re.sub(r"<\?xml[^>]*\?>", "", svg_text, flags=re.I).strip()
+            svg_text = re.sub(r"<!DOCTYPE[^>]*>", "", svg_text, flags=re.I).strip()
+            svg_text = re.sub(r"<script[\s\S]*?</script>", "", svg_text, flags=re.I)
+            svg_text = re.sub(r"\sfill=\"[^\"]*\"", "", svg_text, flags=re.I)
+            svg_text = re.sub(r"\sstroke=\"[^\"]*\"", "", svg_text, flags=re.I)
+
+            # keep only inside the <svg> ... </svg>
+            m = re.search(r"<svg[^>]*>([\s\S]*?)</svg>", svg_text, flags=re.I)
+            inner = m.group(1).strip() if m else svg_text
+
+            # remove any <style> inside icons (keep it minimal/safe)
+            inner = re.sub(r"<style[\s\S]*?</style>", "", inner, flags=re.I)
+            return inner.strip()
+
+          icons_inline = []
+          for name in icon_names:
+            p = icon_dir / f"{name}.svg"
+            if p.exists():
+              inner = sanitize_svg(p.read_text(encoding="utf-8", errors="ignore"))
+              icons_inline.append((name, inner))
+            else:
+              icons_inline.append((name, None))
+
+          # ---- Render minimalist SVG ----
+          W, H = 900, 220
+          pad = 36
+
+          # clean, GitHub-safe stack + optional embedded Delius
+          font_title = "DeliusCursive, Delius, ui-rounded, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto"
+          font_ui    = "ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto"
+
+          # progress bar (cap at 30)
           cap = 30
           progress = min(streak, cap) / cap
-          bar_w = 360
-          bar_h = 14
-          bar_x = padding
-          bar_y = 156
-          fill_w = max(8, int(bar_w * progress))
+          bar_w, bar_h = 260, 10
+          fill_w = max(6, int(bar_w * progress))
+
+          # icon row layout
+          icon_size = 18
+          icon_gap = 14
+          icons_x = pad
+          icons_y = 160
+
+          # Build icon row: inline SVG if available else text chip
+          icon_items = []
+          x = icons_x
+          for name, inner in icons_inline:
+            label = name.upper() if name != "nodejs" else "NODE"
+            if inner:
+              icon_items.append(f"""
+                <g transform="translate({x},{icons_y})">
+                  <rect x="0" y="-14" rx="10" width="44" height="28" fill="#0b1220" stroke="#1f2a44" stroke-width="1"/>
+                  <svg x="13" y="-9" width="{icon_size}" height="{icon_size}" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <g fill="currentColor" color="#dbe6ff">{inner}</g>
+                  </svg>
+                </g>
+              """)
+              x += 44 + icon_gap
+            else:
+              # fallback chip
+              w = 60 if len(label) > 4 else 48
+              icon_items.append(f"""
+                <g transform="translate({x},{icons_y})">
+                  <rect x="0" y="-14" rx="10" width="{w}" height="28" fill="#0b1220" stroke="#1f2a44" stroke-width="1"/>
+                  <text x="{w/2}" y="5" text-anchor="middle" font-family="{font_ui}" font-size="11" fill="#dbe6ff" opacity="0.85">{label}</text>
+                </g>
+              """)
+              x += w + icon_gap
+
+          icon_row = "\n".join(icon_items)
 
           svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}">
             <defs>
-              <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#081018"/>
-                <stop offset="55%" stop-color="#0b1630"/>
-                <stop offset="100%" stop-color="#0a0f1c"/>
+              <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#006c70"/>
+                <stop offset="100%" stop-color="#f4b313"/>
               </linearGradient>
 
-              <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#006c70" stop-opacity="0.70"/>
-                <stop offset="100%" stop-color="#f4b313" stop-opacity="0.65"/>
-              </linearGradient>
-
-              <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+              <filter id="softShadow" x="-20%" y="-30%" width="140%" height="170%">
                 <feGaussianBlur in="SourceAlpha" stdDeviation="10" result="blur"/>
-                <feOffset in="blur" dx="0" dy="10" result="offsetBlur"/>
-                <feComponentTransfer in="offsetBlur" result="shadow">
-                  <feFuncA type="linear" slope="0.25"/>
+                <feOffset in="blur" dx="0" dy="10" result="off"/>
+                <feComponentTransfer in="off">
+                  <feFuncA type="linear" slope="0.22"/>
                 </feComponentTransfer>
                 <feMerge>
-                  <feMergeNode in="shadow"/>
+                  <feMergeNode/>
                   <feMergeNode in="SourceGraphic"/>
                 </feMerge>
               </filter>
 
-              <filter id="softBlur" x="-20%" y="-20%" width="140%" height="140%">
-                <feGaussianBlur stdDeviation="14"/>
-              </filter>
+              <style>
+                {font_face_css}
+              </style>
             </defs>
 
-            <rect width="100%" height="100%" fill="url(#bg)"/>
+            <!-- background -->
+            <rect x="0" y="0" width="{W}" height="{H}" fill="#070b14"/>
 
-            <circle cx="170" cy="85" r="85" fill="url(#glow)" fill-opacity="0.22" filter="url(#softBlur)"/>
-            <circle cx="{W-170}" cy="{H-60}" r="110" fill="url(#glow)" fill-opacity="0.18" filter="url(#softBlur)"/>
-
-            <g filter="url(#shadow)">
-              <rect x="22" y="22" rx="{card_rx}" width="{W-44}" height="{H-44}"
-                fill="#ffffff" fill-opacity="0.06"
-                stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/>
+            <!-- card -->
+            <g filter="url(#softShadow)">
+              <rect x="18" y="18" rx="22" width="{W-36}" height="{H-36}"
+                fill="#0b1220" stroke="#1f2a44" stroke-width="1"/>
+              <rect x="18" y="18" rx="22" width="10" height="{H-36}" fill="url(#accent)"/>
             </g>
 
-            <text x="{padding}" y="86" fill="#ffffff"
-              font-family="{font_stack}" font-size="34" font-weight="800">
-              Custom Streak
+            <!-- title -->
+            <text x="{pad}" y="70" font-family="{font_title}" font-size="34" fill="#ffffff">
+              streak
             </text>
 
-            <text x="{padding}" y="118" fill="#ffffff" fill-opacity="0.78"
-              font-family="{font_stack}" font-size="14">
+            <text x="{pad}" y="96" font-family="{font_ui}" font-size="13" fill="#dbe6ff" opacity="0.70">
               Consecutive days with contributions · Updated {updated}
             </text>
 
-            <text x="{padding}" y="178" fill="#ffffff"
-              font-family="{font_stack}" font-size="28" font-weight="900">
-              {streak} day(s) 🔥
+            <!-- streak number -->
+            <text x="{pad}" y="138" font-family="{font_ui}" font-size="40" fill="#ffffff" font-weight="800">
+              {streak}
+            </text>
+            <text x="{pad+70}" y="138" font-family="{font_ui}" font-size="16" fill="#dbe6ff" opacity="0.75">
+              day(s)
             </text>
 
-            <!-- progress bar -->
-            <rect x="{bar_x}" y="{bar_y}" rx="10" width="{bar_w}" height="{bar_h}"
-              fill="#ffffff" fill-opacity="0.10"/>
-            <rect x="{bar_x}" y="{bar_y}" rx="10" width="{fill_w}" height="{bar_h}"
-              fill="url(#glow)"/>
-
-            <text x="{bar_x + bar_w}" y="{bar_y + 12}" fill="#ffffff" fill-opacity="0.60"
-              font-family="{font_stack}" font-size="12" text-anchor="end">
-              목표 30
+            <!-- minimal progress -->
+            <rect x="{W-pad-bar_w}" y="56" rx="8" width="{bar_w}" height="{bar_h}" fill="#ffffff" opacity="0.10"/>
+            <rect x="{W-pad-bar_w}" y="56" rx="8" width="{fill_w}" height="{bar_h}" fill="url(#accent)"/>
+            <text x="{W-pad}" y="52" text-anchor="end" font-family="{font_ui}" font-size="11" fill="#dbe6ff" opacity="0.55">
+              goal {cap}
             </text>
 
-            <text x="{padding}" y="{H-28}" fill="#ffffff" fill-opacity="0.45"
-              font-family="{font_stack}" font-size="12">
+            <!-- devicon row -->
+            {icon_row}
+
+            <!-- footer -->
+            <text x="{pad}" y="{H-34}" font-family="{font_ui}" font-size="12" fill="#dbe6ff" opacity="0.55">
               Generated by GitHub Actions · {user}
             </text>
           </svg>'''
 
-          open("generated/streak.svg","w",encoding="utf-8").write(svg)
+          Path("generated/streak.svg").write_text(svg, encoding="utf-8")
           PY
 
       - name: Commit changes
@@ -199,5 +266,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add generated/streak.svg
-          git commit -m "chore: update streak svg" || exit 0
+          git commit -m "chore: update streak svg (minimal)" || exit 0
           git push
