@@ -138,8 +138,9 @@
 </p>
 
 ## 🧠 Top languages
+
 <p align="center">
-  <img src="./generated/top-languages.svg" alt="Top languages" />
+  <img src="https://raw.githubusercontent.com/LucasLydio/LucasLydio/main/generated/top-languages.svg" alt="Top languages" />
 </p>
 
 <div align="center">
