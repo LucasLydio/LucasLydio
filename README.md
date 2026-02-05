@@ -133,6 +133,9 @@
   <img src="https://streak-stats.demolab.com?user=LucasLydio" alt="GitHub streak" />
 </div>
 
+<p align="center">
+  <img src="./generated/streak.svg" alt="My custom streak" />
+</p>
 
 ## 🧠 Top languages
 
