@@ -1,8 +1,15 @@
 name: Generate Top Languages SVG
 
 on:
+  # ✅ Auto-update when your repos change (language sizes change after code pushes)
+  push:
+    branches: ["main"]
+
+  # ✅ Also update daily (covers changes from other devices/merges)
   schedule:
     - cron: "15 6 * * *" # daily 06:15 UTC
+
+  # ✅ Manual run button
   workflow_dispatch:
 
 permissions:
@@ -15,7 +22,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Generate top languages SVG
+      - name: Generate top languages (GitHub-safe SVG)
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_USER: LucasLydio
@@ -30,11 +37,12 @@ jobs:
           token = os.environ["GH_TOKEN"]
           user = os.environ["GH_USER"]
 
-          # GraphQL: fetch last 50 non-fork repos + language sizes
+          # GraphQL: fetch up to 80 recent non-fork repos + language sizes
+          # (More repos => more accurate and will reflect changes better)
           query = """
           query($login:String!) {
             user(login:$login) {
-              repositories(first: 50, orderBy: {field: UPDATED_AT, direction: DESC}, isFork: false, ownerAffiliations: OWNER) {
+              repositories(first: 80, orderBy: {field: UPDATED_AT, direction: DESC}, isFork: false, ownerAffiliations: OWNER) {
                 nodes {
                   name
                   languages(first: 10, orderBy: {field: SIZE, direction: DESC}) {
@@ -79,17 +87,30 @@ jobs:
               if node.get("color") and name not in colors:
                 colors[name] = node["color"]
 
+          # ✅ GitHub-safe SVG rules:
+          # - no rgba() in fill/stroke (use fill-opacity/stroke-opacity)
+          # - avoid feDropShadow (use classic blur+offset shadow)
+          # - keep filters simple and widely supported
+
+          def esc(s: str) -> str:
+            return (s.replace("&","&amp;").replace("<","&lt;").replace(">","&gt;")
+                     .replace('"',"&quot;").replace("'","&#39;"))
+
+          updated = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+
           if not totals:
-            # fallback card
-            svg = """<svg xmlns="http://www.w3.org/2000/svg" width="820" height="220">
+            svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="820" height="220" viewBox="0 0 820 220">
               <rect width="100%" height="100%" rx="22" fill="#0b1220"/>
-              <text x="40" y="90" fill="#fff" font-family="ui-sans-serif,system-ui" font-size="28" font-weight="700">
+              <text x="40" y="90" fill="#ffffff" font-family="Delius, ui-sans-serif, system-ui" font-size="28" font-weight="700">
                 Top Languages
               </text>
-              <text x="40" y="130" fill="rgba(255,255,255,0.85)" font-family="ui-sans-serif,system-ui" font-size="16">
+              <text x="40" y="130" fill="#ffffff" fill-opacity="0.85" font-family="Delius, ui-sans-serif, system-ui" font-size="16">
                 No data yet — push some code and re-run the workflow.
               </text>
-            </svg>"""
+              <text x="40" y="160" fill="#ffffff" fill-opacity="0.55" font-family="Delius, ui-sans-serif, system-ui" font-size="12">
+                Updated {updated}
+              </text>
+            </svg>'''
             open("generated/top-languages.svg","w",encoding="utf-8").write(svg)
             raise SystemExit(0)
 
@@ -99,46 +120,35 @@ jobs:
 
           def pct(v): return round((v / total_size) * 100, 1)
 
-          updated = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+          W, H = 900, 340
+          padding = 40
+          card_rx = 28
 
-          # Dribbble-ish "glass + gradient" card
-          W, H = 820, 320
-          padding = 34
-          card_rx = 26
-
-          # layout
-          title_y = 78
-          subtitle_y = 110
+          title_y = 86
+          subtitle_y = 118
           bar_x = padding
-          bar_y = 140
+          bar_y = 150
           bar_w = W - padding*2
           bar_h = 18
 
-          # Build segmented bar
+          # segmented bar
           segs = []
           x = bar_x
-          for i, (name, val) in enumerate(top):
-            w = max(8, int(bar_w * (val / total_size)))
-            color = colors.get(name, "#8b9bb4")
-            segs.append((x, w, color))
+          for (name, val) in top:
+            w = max(10, int(bar_w * (val / total_size)))
+            c = colors.get(name, "#8b9bb4")
+            segs.append((x, w, c))
             x += w
-
-          # Ensure last segment ends exactly at bar end
           if segs:
             last_x, last_w, last_c = segs[-1]
             end = bar_x + bar_w
-            segs[-1] = (last_x, max(8, end - last_x), last_c)
+            segs[-1] = (last_x, max(10, end - last_x), last_c)
 
-          # Legend rows
-          # two columns, 3 rows
+          # legend layout (2 columns)
           col1_x = padding
-          col2_x = W//2 + 10
-          row_y0 = 190
-          row_gap = 38
-
-          def esc(s):
-            return (s.replace("&","&amp;").replace("<","&lt;").replace(">","&gt;")
-                     .replace('"',"&quot;").replace("'","&#39;"))
+          col2_x = W//2 + 20
+          row_y0 = 205
+          row_gap = 42
 
           legend_items = []
           for idx, (name, val) in enumerate(top):
@@ -147,6 +157,11 @@ jobs:
             y = row_y0 + row*row_gap
             c = colors.get(name, "#8b9bb4")
             legend_items.append((col_x, y, name, pct(val), c))
+
+          # Note on font:
+          # SVG cannot reliably "download" Google fonts on GitHub.
+          # We provide Delius first; if GitHub doesn't have it, it falls back to system fonts.
+          font_stack = "Delius, ui-rounded, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto"
 
           svg_parts = []
           svg_parts.append(f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}">
@@ -158,67 +173,85 @@ jobs:
               </linearGradient>
 
               <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#006c70" stop-opacity="0.85"/>
-                <stop offset="100%" stop-color="#f4b313" stop-opacity="0.75"/>
+                <stop offset="0%" stop-color="#006c70" stop-opacity="0.70"/>
+                <stop offset="100%" stop-color="#f4b313" stop-opacity="0.65"/>
               </linearGradient>
 
+              <!-- GitHub-safe shadow -->
               <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-                <feDropShadow dx="0" dy="10" stdDeviation="14" flood-opacity="0.25"/>
+                <feGaussianBlur in="SourceAlpha" stdDeviation="10" result="blur"/>
+                <feOffset in="blur" dx="0" dy="10" result="offsetBlur"/>
+                <feComponentTransfer in="offsetBlur" result="shadow">
+                  <feFuncA type="linear" slope="0.25"/>
+                </feComponentTransfer>
+                <feMerge>
+                  <feMergeNode in="shadow"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
               </filter>
 
-              <filter id="blur" x="-20%" y="-20%" width="140%" height="140%">
-                <feGaussianBlur stdDeviation="10"/>
+              <filter id="softBlur" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="14"/>
               </filter>
             </defs>
 
             <!-- background -->
             <rect width="100%" height="100%" fill="url(#bg)"/>
 
-            <!-- soft glow blobs -->
-            <circle cx="135" cy="85" r="70" fill="url(#glow)" opacity="0.25" filter="url(#blur)"/>
-            <circle cx="{W-140}" cy="{H-70}" r="90" fill="url(#glow)" opacity="0.20" filter="url(#blur)"/>
+            <!-- soft glow blobs (safe) -->
+            <circle cx="170" cy="95" r="85" fill="url(#glow)" fill-opacity="0.22" filter="url(#softBlur)"/>
+            <circle cx="{W-170}" cy="{H-80}" r="110" fill="url(#glow)" fill-opacity="0.18" filter="url(#softBlur)"/>
 
             <!-- glass card -->
             <g filter="url(#shadow)">
-              <rect x="20" y="20" rx="{card_rx}" width="{W-40}" height="{H-40}"
-                fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+              <rect x="22" y="22" rx="{card_rx}" width="{W-44}" height="{H-44}"
+                fill="#ffffff" fill-opacity="0.06"
+                stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/>
             </g>
 
             <!-- title -->
             <text x="{padding}" y="{title_y}" fill="#ffffff"
-              font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto"
-              font-size="30" font-weight="800">
+              font-family="{font_stack}"
+              font-size="34" font-weight="800">
               Top Languages
             </text>
 
-            <text x="{padding}" y="{subtitle_y}" fill="rgba(255,255,255,0.78)"
-              font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto"
+            <text x="{padding}" y="{subtitle_y}" fill="#ffffff" fill-opacity="0.78"
+              font-family="{font_stack}"
               font-size="14">
-              Based on repo language sizes · Updated {updated}
+              Repo language sizes · Updated {updated}
             </text>
 
-            <!-- segmented bar -->
-            <rect x="{bar_x}" y="{bar_y}" rx="10" width="{bar_w}" height="{bar_h}" fill="rgba(255,255,255,0.10)"/>
+            <!-- segmented bar background -->
+            <rect x="{bar_x}" y="{bar_y}" rx="10" width="{bar_w}" height="{bar_h}"
+              fill="#ffffff" fill-opacity="0.10"/>
           ''')
 
-          # bar segments
-          for x, w, c in segs:
-            svg_parts.append(f'<rect x="{x}" y="{bar_y}" rx="10" width="{w}" height="{bar_h}" fill="{c}" opacity="0.95"/>')
+          # segments
+          for sx, sw, sc in segs:
+            svg_parts.append(
+              f'<rect x="{sx}" y="{bar_y}" rx="10" width="{sw}" height="{bar_h}" fill="{sc}" fill-opacity="0.95"/>'
+            )
 
           # legend
-          for x, y, name, p, c in legend_items:
+          for lx, ly, name, p, c in legend_items:
             svg_parts.append(f'''
-              <circle cx="{x+10}" cy="{y-6}" r="6" fill="{c}"/>
-              <text x="{x+24}" y="{y}" fill="#ffffff"
-                font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto"
-                font-size="16" font-weight="700">{esc(name)}</text>
-              <text x="{x+260}" y="{y}" fill="rgba(255,255,255,0.75)"
-                font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto"
-                font-size="14" text-anchor="end">{p}%</text>
+              <circle cx="{lx+10}" cy="{ly-7}" r="6" fill="{c}"/>
+              <text x="{lx+26}" y="{ly}" fill="#ffffff"
+                font-family="{font_stack}" font-size="18" font-weight="800">{esc(name)}</text>
+              <text x="{lx+300}" y="{ly}" fill="#ffffff" fill-opacity="0.72"
+                font-family="{font_stack}" font-size="14" text-anchor="end">{p}%</text>
             ''')
 
-          svg_parts.append("</g></svg>")
+          # footer hint
+          svg_parts.append(f'''
+            <text x="{padding}" y="{H-28}" fill="#ffffff" fill-opacity="0.45"
+              font-family="{font_stack}" font-size="12">
+              Generated by GitHub Actions · {user}
+            </text>
+          ''')
 
+          svg_parts.append("</svg>")
           svg = "\n".join(svg_parts)
           open("generated/top-languages.svg","w",encoding="utf-8").write(svg)
           PY
