@@ -134,15 +134,8 @@
 </div>
 
 <p align="center">
-  <img src="./generated/streak.svg" alt="My custom streak" />
-</p>
-
-## 🧠 Top languages
-
-<p align="center">
   <img src="https://raw.githubusercontent.com/LucasLydio/LucasLydio/main/generated/top-languages.svg" alt="Top languages" />
 </p>
-
 
 ---
 
