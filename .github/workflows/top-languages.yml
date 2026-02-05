@@ -193,7 +193,7 @@ jobs:
               <filter id="softBlur" x="-20%" y="-20%" width="140%" height="140%">
                 <feGaussianBlur stdDeviation="14"/>
               </filter>
-            </defs>
+            </defs> 
 
             <!-- background -->
             <rect width="100%" height="100%" fill="url(#bg)"/>
