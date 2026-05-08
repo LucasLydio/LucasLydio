@@ -1,34 +1,93 @@
 <!-- =======================================================
-  LucasLydio • GitHub Profile README (Backend-focused)
-  - Uses Markdown + lightweight HTML for layout
-  - Icons from Devicon (https://devicon.dev/)
-  - Replace: YOUR_LINKEDIN, YOUR_PORTFOLIO, YOUR_EMAIL
+  LucasLydio • GitHub Profile README
+  Focus: Backend-first Fullstack Developer
 ======================================================= -->
 
 <div align="center">
 
   <h1>Lucas Lydio 👋</h1>
+
   <p>
-    <b>Backend-focused Developer</b> • Node.js + TypeScript • Building reliable APIs & clean architectures
+    <b>Fullstack Developer</b><br/>
   </p>
 
   <p>
-    <a href="https://lucaslydio-portfolio.netlify.app/">
-      <img alt="Portfolio" src="https://img.shields.io/badge/Portfolio-071108?style=for-the-badge&logo=vercel&logoColor=white" />
-    </a>
-    <a href="https://www.linkedin.com/in/lucas-lydio-8231b436b/">
-      <img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-364652?style=for-the-badge&logo=linkedin&logoColor=white" />
-    </a>
-    <a href="mailto:lucaslydiotelecom@gmail.com">
-      <img alt="Email" src="https://img.shields.io/badge/Email-BFB1C1?style=for-the-badge&logo=gmail&logoColor=071108" />
-    </a>
+    Building reliable APIs, clean architectures, scalable applications, and real-world fullstack solutions.
   </p>
 
-  <p>
-    <img alt="Focus" src="https://img.shields.io/badge/Focus-Backend%20%26%20APIs-364652?style=flat&logo=node.js&logoColor=white" />
-    <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-First-364652?style=flat&logo=typescript&logoColor=white" />
-    <img alt="Architecture" src="https://img.shields.io/badge/Architecture-Clean%20%7C%20Modular-BFB1C1?style=flat&logo=code&logoColor=071108" />
-  </p>
+<div align="center">
+
+<table>
+  <tr>
+    <td align="center">
+      <a 
+        href="https://lucaslydio-portfolio.netlify.app/" 
+        target="_blank"
+        style="text-decoration: none;"
+      >
+        <span style="display: inline-flex; align-items: center; gap: 6px;">
+          <img
+            src="https://img.icons8.com/color/48/source-code.png"
+            width="28"
+            height="28"
+            alt="Portfolio"
+            title="Portfolio"
+          />
+          <span style="color: #ffffff;">Portfolio</span>
+        </span>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://www.linkedin.com/in/lucas-lydio-8231b436b/" target="_blank">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
+          width="32"
+          height="32"
+          alt="LinkedIn"
+          title="LinkedIn"
+        />
+      </a>
+    </td>
+    <td align="center">
+      <a href="mailto:lucaslydiodev26@gmail.com">
+        <img
+          src="https://img.icons8.com/fluency/48/filled-message.png"
+          width="32"
+          height="32"
+          alt="Email"
+          title="Email"
+        />
+      </a>
+    </td>
+  </tr>
+</table>
+
+</div>
+
+</div>
+
+---
+
+## 🚀 Experience
+
+<div align="center">
+
+  <img 
+    src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=26&duration=2400&pause=800&color=00FF88&center=true&vCenter=true&width=750&lines=3%2B+Years+Building+Web+Applications;Fullstack+Developer;APIs+%7C+Auth+%7C+Databases+%7C+Deploy+%7C+Testing;Clean+Code+%7C+Strong+Typing+%7C+Consistent+Delivery" 
+    alt="3+ years of experience typing animation" 
+  />
+
+</div>
+
+<br/>
+
+<div align="center">
+
+  <img 
+    src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" 
+    width="420" 
+    alt="Programmer terminal animation" 
+  />
 
 </div>
 
@@ -36,114 +95,110 @@
 
 ## 🧠 About me
 
-- Backend-first mindset: **clean services**, **typed contracts**, **secure auth**, **scalable APIs**
-- I ship full-stack when needed, but my sweet spot is **Node.js + TypeScript** (Prisma, Redis, JWT, Postgres/Supabase)
-- I care about: **DX**, **observability**, **performance**, and **simple maintainable code**
-
----
+- I'm a developer who enjoys understanding how things work behind the scenes
+- I like learning step by step, improving every project, and turning ideas into real applications
+- I'm always growing in tech, studying new concepts, and practicing to become a better developer
+- I believe consistency, curiosity, and discipline are the keys to building good software
 
 ## 🧰 Most used technologies
 
 <div align="center">
 
-<!-- Core -->
+### Backend / Core
+
 <img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" />
-<img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" />
 <img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
+<img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" />
 <img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" />
+<img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg" />
 <img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg" />
 <img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" />
 <img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" />
-<img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" />
-<img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" />
-<img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
 
-<br/>
+<br/><br/>
 
-<!-- Web / Front (when needed) -->
-<img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
+### Java Ecosystem
+
+<img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" />
+<img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" />
+<img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/maven/maven-original.svg" />
+<img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gradle/gradle-original.svg" />
+<img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/hibernate/hibernate-original.svg" />
+<img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/junit/junit-original.svg" />
+
+<br/><br/>
+
+### Frontend
+
 <img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg" />
+<img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
+<img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rxjs/rxjs-original.svg" />
 <img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg" />
 <img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
+<img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" />
 <img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" />
+<img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" />
 <img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" />
+
+<br/><br/>
+
+### Testing / Quality
+
+<img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg" />
+<img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitest/vitest-original.svg" />
+<img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cypressio/cypressio-original.svg" />
+<img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/playwright/playwright-original.svg" />
+<img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eslint/eslint-original.svg" />
+<img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prettier/prettier-original.svg" />
+
+<br/><br/>
+
+### DevOps / Cloud / Observability
+
+<img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" />
+<img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg" />
+<img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" />
+<img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" />
+<img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" />
+<img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/netlify/netlify-original.svg" />
+<img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" />
+<img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg" />
+<img height="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.svg" />
 
 </div>
 
 <p align="center">
   <sub>
-    Also: JWT auth • REST APIs • shadcn/ui • Tailwind • Dockerized environments • Redis caching
+    Also: REST APIs • JWT Auth • Refresh Tokens • OAuth2 • Clean Architecture • Dockerized Environments • Redis Caching • CI/CD • Unit Tests • Integration Tests • E2E Tests • Logs • Metrics • Health Checks
   </sub>
 </p>
 
 ---
 
-## ⭐ Featured projects
+## 📈 GitHub activity
 
 <div align="center">
 
-<table>
-  <tr>
-    <td width="50%">
-      <h3>🧩 Forms (Full Stack)</h3>
-      <p>
-        React (TSX) + Vite • Node.js + TypeScript • Typed forms & submissions flow
-      </p>
-      <p>
-        <a href="https://github.com/LucasLydio/forms-frontend.git"><b>Repository</b></a> •
-        <a href="#"><b>Live</b></a>
-      </p>
-      <p>
-        <sub>Highlights: auth, validations, clean API contracts, modular services</sub>
-      </p>
-    </td>
-    <td width="50%">
-      <h3>🟩 Info Tech Web (Full Stack)</h3>
-      <p>
-        Angular • Node.js • Platform-style app with clean modules & services
-      </p>
-      <p>
-        <a href="https://github.com/LucasLydio/infoTechWeb.git"><b>Repository</b></a> •
-        <a href="#"><b>Live</b></a>
-      </p>
-      <p>
-        <sub>Highlights: scalable structure, feature modules, REST patterns</sub>
-      </p>
-    </td>
-  </tr>
-</table>
+  <img 
+    src="https://streak-stats.demolab.com?user=LucasLydio&theme=tokyonight&hide_border=true&background=0D1117&stroke=00FF88&ring=00FF88&fire=00FF88&currStreakLabel=00FF88" 
+    alt="GitHub streak" 
+  />
+
+</div>
+
+<br/>
+
+<div align="center">
+
+  <img 
+    src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" 
+    width="420" 
+    alt="Programmer coding animation" 
+  />
 
 </div>
 
 ---
-
-## ✅ Backend principles I follow
-
-- **Type-safe flows** (DTOs, typed responses, consistent error handling)
-- **Clean architecture** (controllers → services → data layer)
-- **Security first** (JWT/session strategies, validation, rate-limit ready)
-- **Performance** (pagination, caching with Redis, good indexes)
-- **DX** (scripts, env examples, Docker, predictable setup)
-
----
-
-## 📈 GitHub stats
-
-<div align="center">
-  <img src="https://streak-stats.demolab.com?user=LucasLydio" alt="GitHub streak" />
-</div>
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/LucasLydio/LucasLydio/main/generated/top-languages.svg" alt="Top languages" />
-</p>
-
----
-
-## 🤝 Contact
-
-- Portfolio: **https://lucaslydio-portfolio.netlify.app/**
-- LinkedIn: **https://www.linkedin.com/in/lucas-lydio-8231b436b/**
-- Email: **lucaslydiodev@gmail.com**
 
 <div align="center">
   <sub>Backend-first • clean APIs • strong typing • consistent delivery</sub>
