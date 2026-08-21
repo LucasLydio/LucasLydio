@@ -53,39 +53,39 @@
   <text x="40" y="118" fill="#ffffff" fill-opacity="0.78"
     font-family="Delius, ui-rounded, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto"
     font-size="14">
-    Repo language sizes · Updated 2026-08-20 07:03 UTC
+    Repo language sizes · Updated 2026-08-21 07:04 UTC
   </text>
 
   <!-- segmented bar background -->
   <rect x="40" y="150" rx="10" width="820" height="18"
     fill="#ffffff" fill-opacity="0.10"/>
 
-<rect x="40" y="150" rx="10" width="377" height="18" fill="#3178c6" fill-opacity="0.95"/>
-<rect x="417" y="150" rx="10" width="164" height="18" fill="#f1e05a" fill-opacity="0.95"/>
-<rect x="581" y="150" rx="10" width="128" height="18" fill="#e34c26" fill-opacity="0.95"/>
-<rect x="709" y="150" rx="10" width="75" height="18" fill="#663399" fill-opacity="0.95"/>
-<rect x="784" y="150" rx="10" width="39" height="18" fill="#89e051" fill-opacity="0.95"/>
+<rect x="40" y="150" rx="10" width="376" height="18" fill="#3178c6" fill-opacity="0.95"/>
+<rect x="416" y="150" rx="10" width="164" height="18" fill="#f1e05a" fill-opacity="0.95"/>
+<rect x="580" y="150" rx="10" width="128" height="18" fill="#e34c26" fill-opacity="0.95"/>
+<rect x="708" y="150" rx="10" width="74" height="18" fill="#663399" fill-opacity="0.95"/>
+<rect x="782" y="150" rx="10" width="41" height="18" fill="#89e051" fill-opacity="0.95"/>
 <rect x="823" y="150" rx="10" width="37" height="18" fill="#3572A5" fill-opacity="0.95"/>
 
     <circle cx="50" cy="198" r="6" fill="#3178c6"/>
     <text x="66" y="205" fill="#ffffff"
       font-family="Delius, ui-rounded, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto" font-size="18" font-weight="800">TypeScript</text>
     <text x="340" y="205" fill="#ffffff" fill-opacity="0.72"
-      font-family="Delius, ui-rounded, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto" font-size="14" text-anchor="end">46.1%</text>
+      font-family="Delius, ui-rounded, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto" font-size="14" text-anchor="end">45.9%</text>
   
 
     <circle cx="50" cy="240" r="6" fill="#f1e05a"/>
     <text x="66" y="247" fill="#ffffff"
       font-family="Delius, ui-rounded, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto" font-size="18" font-weight="800">JavaScript</text>
     <text x="340" y="247" fill="#ffffff" fill-opacity="0.72"
-      font-family="Delius, ui-rounded, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto" font-size="14" text-anchor="end">20.1%</text>
+      font-family="Delius, ui-rounded, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto" font-size="14" text-anchor="end">20.0%</text>
   
 
     <circle cx="50" cy="282" r="6" fill="#e34c26"/>
     <text x="66" y="289" fill="#ffffff"
       font-family="Delius, ui-rounded, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto" font-size="18" font-weight="800">HTML</text>
     <text x="340" y="289" fill="#ffffff" fill-opacity="0.72"
-      font-family="Delius, ui-rounded, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto" font-size="14" text-anchor="end">15.7%</text>
+      font-family="Delius, ui-rounded, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto" font-size="14" text-anchor="end">15.6%</text>
   
 
     <circle cx="480" cy="198" r="6" fill="#663399"/>
@@ -99,7 +99,7 @@
     <text x="496" y="247" fill="#ffffff"
       font-family="Delius, ui-rounded, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto" font-size="18" font-weight="800">Shell</text>
     <text x="770" y="247" fill="#ffffff" fill-opacity="0.72"
-      font-family="Delius, ui-rounded, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto" font-size="14" text-anchor="end">4.8%</text>
+      font-family="Delius, ui-rounded, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto" font-size="14" text-anchor="end">5.1%</text>
   
 
     <circle cx="480" cy="282" r="6" fill="#3572A5"/>
