@@ -1,88 +1,58 @@
-<!--
-  GitHub Profile README
-  Username: LucasLydio
-  Visual direction: Engineering Dashboard / Developer Landing Page
--->
+<!-- ============================================================
+     LucasLydio / GitHub Profile
+     Concept: Engineering Control Room
+     ============================================================ -->
 
-<div align="center">
+<!-- ========================= HERO ============================== -->
 
-# Lucas Lydio
+<table width="100%">
+<tr>
+<td width="65%" valign="middle">
 
-### Full Stack Developer · Software Engineer
+# `LucasLydio`
 
-**Node.js & TypeScript · Angular & React · Java & Spring Boot · Cloud & DevOps**
+### Full Stack Developer / Software Engineer
 
-Building reliable web applications from **API architecture** and **data layers**
-to **responsive interfaces**, **automated delivery**, and **production observability**.
+> Building software from the API contract
+> to the interface, deployment pipeline and runtime.
+
+<img
+src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=18&duration=3200&pause=900&color=58A6FF&vCenter=true&width=520&lines=Node.js+%2B+TypeScript+Engineering;Angular+%2F+React+Applications;Java+%2B+Spring+Boot;Cloud+%2B+DevOps+%2B+Observability;Building+systems+that+are+easy+to+operate"
+alt="Engineering focus"
+/>
 
 <br/>
 
-<a href="https://github.com/LucasLydio?tab=repositories">Explore my repositories</a>
+`BACKEND` · `FRONTEND` · `CLOUD` · `DEVOPS` · `QUALITY`
 
-</div>
+<br/>
 
----
+<a href="https://github.com/LucasLydio?tab=repositories">
+  <img alt="Repositories" src="https://img.shields.io/badge/EXPLORE_REPOSITORIES-161B22?style=for-the-badge&logo=github&logoColor=white">
+</a>
 
-## 👋 About me
+</td>
 
-I'm a **Full Stack Developer** focused on building maintainable, scalable and production-ready software.
+<td width="35%" align="center" valign="middle">
 
-I enjoy working across the entire application lifecycle — designing APIs, modeling databases, building frontend experiences, automating infrastructure, improving reliability and creating development workflows that make systems easier to operate.
+<a href="https://github.com/LucasLydio">
+  <img
+    src="https://github.com/LucasLydio.png?size=240"
+    width="190"
+    alt="Lucas Lydio GitHub profile"
+  />
+</a>
+
+<br/><br/>
 
 ```text
-> current_focus
+SYSTEM STATUS
 
-backend architecture   → Node.js · TypeScript · Java · Spring Boot
-frontend systems       → Angular · React
-data & caching         → PostgreSQL · Prisma · Redis
-delivery               → Docker · GitHub Actions · Nginx · Cloud
-quality                → Unit · Integration · E2E
-engineering            → Clean Architecture · SOLID · Observability
+● APIs          ONLINE
+● Frontend      ONLINE
+● CI/CD         ONLINE
+● Observability ONLINE
 ```
-
----
-
-## What I build
-
-<table>
-<tr>
-<td width="50%" valign="top">
-
-### ⚙️ Backend Systems
-
-REST APIs, authentication, integrations and business services designed around maintainability and clear boundaries.
-
-**Node.js · TypeScript · NestJS · Express · Java · Spring Boot**
-
-</td>
-<td width="50%" valign="top">
-
-### 🖥️ Web Applications
-
-Responsive interfaces connected to real APIs, with reusable components and predictable application flows.
-
-**Angular · React · RxJS · TypeScript**
-
-</td>
-</tr>
-
-<tr>
-<td width="50%" valign="top">
-
-### ☁️ Delivery & Infrastructure
-
-Containerized environments and automated workflows from development through deployment.
-
-**Docker · GitHub Actions · Nginx · AWS · Terraform**
-
-</td>
-<td width="50%" valign="top">
-
-### 📊 Reliability & Quality
-
-Testing, caching, metrics, logs and health checks designed to make applications easier to trust and operate.
-
-**Jest · Vitest · Cypress · Playwright · Redis · Grafana · Prometheus**
 
 </td>
 </tr>
@@ -90,221 +60,716 @@ Testing, caching, metrics, logs and health checks designed to make applications 
 
 ---
 
-# Technology Ecosystem
+<!-- ====================== CONTROL PANEL ======================= -->
 
 <div align="center">
 
-### Backend / Core
+### `// ENGINEERING CONTROL PANEL`
 
-<img height="42" width="42" alt="TypeScript" title="TypeScript" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" />
-&nbsp;
-<img height="42" width="42" alt="JavaScript" title="JavaScript" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
-&nbsp;
-<img height="42" width="42" alt="Node.js" title="Node.js" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" />
-&nbsp;
-<img height="42" width="42" alt="Express" title="Express" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" />
-&nbsp;
-<img height="42" width="42" alt="NestJS" title="NestJS" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg" />
-&nbsp;
-<img height="42" width="42" alt="Prisma" title="Prisma" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg" />
-&nbsp;
-<img height="42" width="42" alt="PostgreSQL" title="PostgreSQL" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" />
-&nbsp;
-<img height="42" width="42" alt="Redis" title="Redis" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" />
-
-<br/><br/>
-
-### Java Ecosystem
-
-<img height="42" width="42" alt="Java" title="Java" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" />
-&nbsp;
-<img height="42" width="42" alt="Spring" title="Spring" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" />
-&nbsp;
-<img height="42" width="42" alt="Maven" title="Maven" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/maven/maven-original.svg" />
-&nbsp;
-<img height="42" width="42" alt="Gradle" title="Gradle" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gradle/gradle-original.svg" />
-&nbsp;
-<img height="42" width="42" alt="Hibernate" title="Hibernate" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/hibernate/hibernate-original.svg" />
-&nbsp;
-<img height="42" width="42" alt="JUnit" title="JUnit" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/junit/junit-original.svg" />
-
-<br/><br/>
-
-### Frontend
-
-<img height="42" width="42" alt="Angular" title="Angular" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg" />
-&nbsp;
-<img height="42" width="42" alt="React" title="React" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
-&nbsp;
-<img height="42" width="42" alt="RxJS" title="RxJS" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rxjs/rxjs-original.svg" />
-&nbsp;
-<img height="42" width="42" alt="Vite" title="Vite" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg" />
-&nbsp;
-<img height="42" width="42" alt="HTML5" title="HTML5" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
-&nbsp;
-<img height="42" width="42" alt="CSS3" title="CSS3" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" />
-&nbsp;
-<img height="42" width="42" alt="Sass" title="Sass" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" />
-&nbsp;
-<img height="42" width="42" alt="Bootstrap" title="Bootstrap" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" />
-&nbsp;
-<img height="42" width="42" alt="Tailwind CSS" title="Tailwind CSS" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" />
-
-<br/><br/>
-
-### Testing / Quality
-
-<img height="42" width="42" alt="Jest" title="Jest" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg" />
-&nbsp;
-<img height="42" width="42" alt="Vitest" title="Vitest" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitest/vitest-original.svg" />
-&nbsp;
-<img height="42" width="42" alt="Cypress" title="Cypress" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cypressio/cypressio-original.svg" />
-&nbsp;
-<img height="42" width="42" alt="Playwright" title="Playwright" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/playwright/playwright-original.svg" />
-&nbsp;
-<img height="42" width="42" alt="ESLint" title="ESLint" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eslint/eslint-original.svg" />
-&nbsp;
-<img height="42" width="42" alt="Prettier" title="Prettier" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prettier/prettier-original.svg" />
-
-<br/><br/>
-
-### DevOps / Cloud / Observability
-
-<img height="42" width="42" alt="Docker" title="Docker" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" />
-&nbsp;
-<img height="42" width="42" alt="GitHub Actions" title="GitHub Actions" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg" />
-&nbsp;
-<img height="42" width="42" alt="Nginx" title="Nginx" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" />
-&nbsp;
-<img height="42" width="42" alt="Terraform" title="Terraform" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" />
-&nbsp;
-<img height="42" alt="AWS" title="Amazon Web Services" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" />
-&nbsp;
-<img height="42" width="42" alt="Netlify" title="Netlify" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/netlify/netlify-original.svg" />
-&nbsp;
-<img height="42" width="42" alt="Vercel" title="Vercel" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" />
-&nbsp;
-<img height="42" width="42" alt="Grafana" title="Grafana" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg" />
-&nbsp;
-<img height="42" width="42" alt="Prometheus" title="Prometheus" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.svg" />
+<sub>
+Architecture · Development · Delivery · Reliability
+</sub>
 
 </div>
 
 <br/>
 
-<p align="center">
-<sub>
-REST APIs · JWT · Refresh Tokens · OAuth2 · RBAC · Clean Architecture ·
-Redis Caching · Dockerized Environments · CI/CD · Unit Tests ·
-Integration Tests · E2E Tests · Logs · Metrics · Health Checks
-</sub>
-</p>
+<table width="100%">
+<tr>
 
----
+<td width="50%" valign="top">
 
-## Engineering mindset
+### `01 / BACKEND`
+
+**Primary runtime**
+
+<img height="34" alt="TypeScript" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" />
+&nbsp;
+<img height="34" alt="Node.js" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" />
+&nbsp;
+<img height="34" alt="NestJS" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg" />
+&nbsp;
+<img height="34" alt="Express" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" />
+
+<br/><br/>
 
 ```text
-Design      → simple boundaries before unnecessary abstractions
-Backend     → predictable APIs, validation and explicit contracts
-Frontend    → reusable components and clear application state
-Data        → intentional schemas, queries and caching strategies
-Security    → authentication, authorization and secure defaults
-Testing     → verify behavior at the right testing layer
-Delivery    → reproducible environments and automated pipelines
-Operations  → logs, metrics, health checks and diagnosable failures
+REST APIs
+Authentication
+Authorization / RBAC
+System integrations
+Background processing
+Caching
+Architecture
 ```
 
-I care about software that is not only able to **run**, but is also easy to **understand, test, deploy, monitor and evolve**.
+</td>
+
+<td width="50%" valign="top">
+
+### `02 / DATA`
+
+**Persistence & cache**
+
+<img height="34" alt="PostgreSQL" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" />
+&nbsp;
+<img height="34" alt="Prisma" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg" />
+&nbsp;
+<img height="34" alt="Redis" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" />
+
+<br/><br/>
+
+```text
+PostgreSQL
+Relational modeling
+Prisma ORM
+Redis caching
+Transactions
+Migrations
+Data consistency
+```
+
+</td>
+
+</tr>
+
+<tr>
+
+<td width="50%" valign="top">
+
+### `03 / FRONTEND`
+
+**Application layer**
+
+<img height="34" alt="Angular" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg" />
+&nbsp;
+<img height="34" alt="React" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
+&nbsp;
+<img height="34" alt="RxJS" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rxjs/rxjs-original.svg" />
+&nbsp;
+<img height="34" alt="Vite" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg" />
+
+<br/><br/>
+
+```text
+Angular
+React
+RxJS
+Responsive UI
+State management
+API integration
+Accessible interfaces
+```
+
+</td>
+
+<td width="50%" valign="top">
+
+### `04 / JAVA`
+
+**Enterprise ecosystem**
+
+<img height="34" alt="Java" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" />
+&nbsp;
+<img height="34" alt="Spring" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" />
+&nbsp;
+<img height="34" alt="Hibernate" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/hibernate/hibernate-original.svg" />
+&nbsp;
+<img height="34" alt="JUnit" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/junit/junit-original.svg" />
+
+<br/><br/>
+
+```text
+Java
+Spring Boot
+Hibernate
+Maven / Gradle
+JUnit
+REST services
+Backend architecture
+```
+
+</td>
+
+</tr>
+</table>
 
 ---
 
-## Currently building
+<!-- ======================== PIPELINE ========================== -->
+
+<div align="center">
+
+## `// DELIVERY PIPELINE`
+
+</div>
+
+```text
+┌──────────────┐
+│    SOURCE    │
+│ Git / GitHub │
+└──────┬───────┘
+       │
+       ▼
+┌──────────────┐
+│   QUALITY    │
+│ Test + Lint  │
+└──────┬───────┘
+       │
+       ▼
+┌──────────────┐
+│    BUILD     │
+│    Docker    │
+└──────┬───────┘
+       │
+       ▼
+┌──────────────┐
+│    CI/CD     │
+│ GH Actions   │
+└──────┬───────┘
+       │
+       ▼
+┌──────────────┐
+│   DELIVERY   │
+│ Cloud / VPS  │
+└──────┬───────┘
+       │
+       ▼
+┌──────────────┐
+│ OBSERVABILITY│
+│ Logs/Metrics │
+└──────────────┘
+```
+
+<div align="center">
+
+<img height="38" alt="Docker" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" />
+&nbsp;&nbsp;
+<img height="38" alt="GitHub Actions" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg" />
+&nbsp;&nbsp;
+<img height="38" alt="Nginx" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" />
+&nbsp;&nbsp;
+<img height="38" alt="Terraform" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" />
+&nbsp;&nbsp;
+<img height="38" alt="AWS" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" />
+&nbsp;&nbsp;
+<img height="38" alt="Netlify" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/netlify/netlify-original.svg" />
+&nbsp;&nbsp;
+<img height="38" alt="Vercel" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" />
+
+</div>
+
+---
+
+<!-- ====================== SYSTEM DESIGN ======================= -->
+
+## `// HOW I THINK ABOUT SOFTWARE`
+
+<table>
+<tr>
+
+<td width="33%" valign="top">
+
+### Architecture
+
+```text
+SOLID
+Clean Architecture
+Clear boundaries
+Explicit contracts
+Low coupling
+```
+
+</td>
+
+<td width="33%" valign="top">
+
+### Reliability
+
+```text
+Validation
+Retries
+Caching
+Health checks
+Error handling
+Observability
+```
+
+</td>
+
+<td width="33%" valign="top">
+
+### Delivery
+
+```text
+Docker
+CI/CD
+Environments
+Automation
+Nginx
+Cloud
+```
+
+</td>
+
+</tr>
+</table>
+
+---
+
+<!-- ====================== TESTING LAB ========================= -->
+
+## `// QUALITY LAB`
+
+<table width="100%">
+<tr>
+
+<td width="55%" valign="middle">
+
+Software quality is part of the architecture, not something added immediately before deployment.
+
+```text
+         ┌─────────┐
+         │   E2E   │
+      ┌──┴─────────┴──┐
+      │  Integration  │
+   ┌──┴───────────────┴──┐
+   │        Unit         │
+   └─────────────────────┘
+```
+
+**Unit → Integration → E2E**
+
+</td>
+
+<td width="45%" align="center" valign="middle">
+
+<img height="38" alt="Jest" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg" />
+&nbsp;&nbsp;
+<img height="38" alt="Vitest" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitest/vitest-original.svg" />
+&nbsp;&nbsp;
+<img height="38" alt="Cypress" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cypressio/cypressio-original.svg" />
+&nbsp;&nbsp;
+<img height="38" alt="Playwright" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/playwright/playwright-original.svg" />
+
+<br/><br/>
+
+`Jest`
+
+`Vitest`
+
+`Cypress`
+
+`Playwright`
+
+`JUnit`
+
+</td>
+
+</tr>
+</table>
+
+---
+
+<!-- ==================== OBSERVABILITY ========================= -->
+
+## `// RUNTIME TELEMETRY`
+
+<table>
+<tr>
+
+<td width="50%" valign="top">
+
+### Signals
+
+```text
+logs
+ ├─ application
+ ├─ infrastructure
+ └─ errors
+
+metrics
+ ├─ latency
+ ├─ throughput
+ └─ failures
+
+health
+ ├─ API
+ ├─ database
+ └─ cache
+```
+
+</td>
+
+<td width="50%" valign="middle" align="center">
+
+<img height="48" alt="Grafana" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg" />
+&nbsp;&nbsp;&nbsp;
+<img height="48" alt="Prometheus" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.svg" />
+&nbsp;&nbsp;&nbsp;
+<img height="48" alt="Redis" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" />
+
+<br/><br/>
+
+**Logs · Metrics · Health Checks · Diagnostics**
+
+</td>
+
+</tr>
+</table>
+
+---
+
+<!-- ====================== PROJECT LAB ========================= -->
+
+<div align="center">
+
+## `// CURRENT ENGINEERING LAB`
+
+</div>
+
+<table width="100%">
+<tr>
+
+<td width="33%" valign="top">
 
 ### 🚀 Visual Pipeline
 
-A developer-focused CI/CD platform exploring the complete deployment lifecycle:
+**CI/CD as a visual experience**
 
-`Repository → Pipeline → Docker Build → Deployment → Runtime`
+```text
+Repository
+   ↓
+Pipeline
+   ↓
+Docker Build
+   ↓
+Deployment
+   ↓
+Runtime
+```
 
-Focused on visual pipeline execution, deployment feedback, automated builds and developer experience.
+Node.js · TypeScript
+PostgreSQL · Redis
+Docker · CI/CD
 
-**Engineering:** Node.js · TypeScript · PostgreSQL · Prisma · Redis · Docker · CI/CD
+<a href="https://github.com/LucasLydio?tab=repositories">
+View projects →
+</a>
 
----
+</td>
+
+<td width="33%" valign="top">
 
 ### 🛰️ AppPilot
 
-A DevOps CLI designed to standardize application deployment and server operations across VPS environments.
+**Infrastructure automation CLI**
 
 ```text
-bootstrap → configure → deploy → expose → monitor → recover
+bootstrap
+   ↓
+configure
+   ↓
+deploy
+   ↓
+expose
+   ↓
+operate
 ```
 
-Exploring Docker, Nginx, SSL, firewall configuration, process management, diagnostics, backups and deployment strategies.
+Docker · Nginx
+Linux · SSL
+Deployment Automation
 
-**Engineering:** CLI Architecture · Docker · Nginx · Linux · Deployment Automation
+<a href="https://github.com/LucasLydio?tab=repositories">
+View projects →
+</a>
 
----
+</td>
 
-### 🔁 Webhook Reliability Hub
+<td width="33%" valign="top">
 
-An architecture-focused backend exploring resilient webhook processing.
+### 🔁 Webhook Hub
+
+**Reliable event processing**
 
 ```text
 Webhook
    ↓
-Validation
-   ↓
 Queue
    ↓
-Provider Strategy
+Strategy
    ↓
-Processing
+Retry
    ↓
-Retry / Failure Handling
+Recovery
 ```
 
-Focused on retries, provider strategies, queues, persistence and failure recovery using a modular architecture.
+NestJS · Prisma
+PostgreSQL · Redis
+Architecture Patterns
 
-**Engineering:** NestJS · TypeScript · PostgreSQL · Prisma · Redis
+<a href="https://github.com/LucasLydio?tab=repositories">
+View projects →
+</a>
+
+</td>
+
+</tr>
+</table>
 
 ---
 
-## Areas I enjoy exploring
+<!-- ====================== GITHUB TELEMETRY ==================== -->
 
-`Distributed Systems`
- · 
+<div align="center">
+
+## `// GITHUB TELEMETRY`
+
+### Development activity
+
+<br/>
+
+<picture>
+  <source
+    media="(prefers-color-scheme: dark)"
+    srcset="https://github-stats-extended.vercel.app/api?username=LucasLydio&show_icons=true&hide_border=true&theme=github_dark&rank_icon=github"
+  />
+  <img
+    height="180"
+    alt="Lucas Lydio GitHub statistics"
+    src="https://github-stats-extended.vercel.app/api?username=LucasLydio&show_icons=true&hide_border=true&theme=default&rank_icon=github"
+  />
+</picture>
+
+<picture>
+  <source
+    media="(prefers-color-scheme: dark)"
+    srcset="https://github-stats-extended.vercel.app/api/top-langs/?username=LucasLydio&layout=compact&langs_count=8&hide_border=true&theme=github_dark"
+  />
+  <img
+    height="180"
+    alt="Most used languages"
+    src="https://github-stats-extended.vercel.app/api/top-langs/?username=LucasLydio&layout=compact&langs_count=8&hide_border=true&theme=default"
+  />
+</picture>
+
+<br/><br/>
+
+<picture>
+  <source
+    media="(prefers-color-scheme: dark)"
+    srcset="https://streak-stats.demolab.com?user=LucasLydio&theme=github-dark-blue&hide_border=true"
+  />
+  <img
+    alt="GitHub contribution streak"
+    src="https://streak-stats.demolab.com?user=LucasLydio&theme=default&hide_border=true"
+  />
+</picture>
+
+</div>
+
+---
+
+<!-- ===================== ACTIVITY GRAPH ======================= -->
+
+<div align="center">
+
+### `ACTIVITY SIGNAL`
+
+<img
+width="100%"
+alt="Lucas Lydio contribution activity graph"
+src="https://github-readme-activity-graph.vercel.app/graph?username=LucasLydio&theme=github-compact&hide_border=true&area=true"
+/>
+
+</div>
+
+---
+
+<!-- ======================= STACK MAP ========================== -->
+
+<details>
+
+<summary><strong>⚙ Open complete technology matrix</strong></summary>
+
+<br/>
+
+<div align="center">
+
+### Backend / Core
+
+<img height="40" alt="TypeScript" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" />
+&nbsp;
+<img height="40" alt="JavaScript" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
+&nbsp;
+<img height="40" alt="Node.js" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" />
+&nbsp;
+<img height="40" alt="Express" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" />
+&nbsp;
+<img height="40" alt="NestJS" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg" />
+&nbsp;
+<img height="40" alt="Prisma" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg" />
+&nbsp;
+<img height="40" alt="PostgreSQL" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" />
+&nbsp;
+<img height="40" alt="Redis" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" />
+
+<br/><br/>
+
+### Java Ecosystem
+
+<img height="40" alt="Java" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" />
+&nbsp;
+<img height="40" alt="Spring" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" />
+&nbsp;
+<img height="40" alt="Maven" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/maven/maven-original.svg" />
+&nbsp;
+<img height="40" alt="Gradle" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gradle/gradle-original.svg" />
+&nbsp;
+<img height="40" alt="Hibernate" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/hibernate/hibernate-original.svg" />
+&nbsp;
+<img height="40" alt="JUnit" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/junit/junit-original.svg" />
+
+<br/><br/>
+
+### Frontend
+
+<img height="40" alt="Angular" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg" />
+&nbsp;
+<img height="40" alt="React" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
+&nbsp;
+<img height="40" alt="RxJS" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rxjs/rxjs-original.svg" />
+&nbsp;
+<img height="40" alt="Vite" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg" />
+&nbsp;
+<img height="40" alt="HTML5" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
+&nbsp;
+<img height="40" alt="CSS3" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" />
+&nbsp;
+<img height="40" alt="Sass" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" />
+&nbsp;
+<img height="40" alt="Bootstrap" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" />
+&nbsp;
+<img height="40" alt="Tailwind CSS" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" />
+
+<br/><br/>
+
+### Testing / Quality
+
+<img height="40" alt="Jest" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg" />
+&nbsp;
+<img height="40" alt="Vitest" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitest/vitest-original.svg" />
+&nbsp;
+<img height="40" alt="Cypress" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cypressio/cypressio-original.svg" />
+&nbsp;
+<img height="40" alt="Playwright" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/playwright/playwright-original.svg" />
+&nbsp;
+<img height="40" alt="ESLint" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eslint/eslint-original.svg" />
+&nbsp;
+<img height="40" alt="Prettier" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prettier/prettier-original.svg" />
+
+<br/><br/>
+
+### Infrastructure / Cloud
+
+<img height="40" alt="Docker" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" />
+&nbsp;
+<img height="40" alt="GitHub Actions" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg" />
+&nbsp;
+<img height="40" alt="Nginx" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" />
+&nbsp;
+<img height="40" alt="Terraform" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" />
+&nbsp;
+<img height="40" alt="AWS" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" />
+&nbsp;
+<img height="40" alt="Netlify" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/netlify/netlify-original.svg" />
+&nbsp;
+<img height="40" alt="Vercel" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" />
+&nbsp;
+<img height="40" alt="Grafana" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg" />
+&nbsp;
+<img height="40" alt="Prometheus" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.svg" />
+
+</div>
+
+<br/>
+
+**Concepts**
+
+`REST APIs`
+· `JWT`
+· `OAuth2`
+· `Refresh Tokens`
+· `RBAC`
+· `Clean Architecture`
+· `SOLID`
+· `Redis Caching`
+· `CI/CD`
+· `Dockerized Environments`
+· `Unit Tests`
+· `Integration Tests`
+· `E2E`
+· `Logs`
+· `Metrics`
+· `Health Checks`
+
+</details>
+
+---
+
+<!-- ======================= INTERESTS ========================== -->
+
+<div align="center">
+
+## `// ENGINEERING INTERESTS`
+
 `Backend Architecture`
  · 
-`Cloud Infrastructure`
+`Distributed Systems`
  · 
 `Developer Tooling`
+
+`Cloud Infrastructure`
  · 
 `CI/CD`
  · 
 `Observability`
+
+`System Reliability`
  · 
 `Software Testing`
  · 
-`System Reliability`
+`Automation`
+
+</div>
 
 ---
 
+<!-- ========================= FOOTER =========================== -->
+
 <div align="center">
 
-## Let's build something useful.
+## `READY FOR THE NEXT BUILD_`
 
-I enjoy solving engineering problems that connect
-**backend architecture, frontend experience and infrastructure.**
+**I like engineering software that is easy to**
 
-<a href="https://github.com/LucasLydio">GitHub</a>
- •  <a href="https://github.com/LucasLydio?tab=repositories">Projects</a>
+`UNDERSTAND` → `TEST` → `DEPLOY` → `OBSERVE` → `EVOLVE`
+
+<br/>
+
+<a href="https://github.com/LucasLydio">
+  <img src="https://img.shields.io/badge/GitHub-LucasLydio-161B22?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
+</a>
+
+<a href="https://github.com/LucasLydio?tab=repositories">
+  <img src="https://img.shields.io/badge/Projects-Explore-161B22?style=for-the-badge&logo=github&logoColor=58A6FF" alt="Projects">
+</a>
 
 <br/><br/>
 
 <sub>
-Software should be easy to run — and even easier to understand.
+BUILD SYSTEMS · SHIP RELIABLY · KEEP LEARNING
 </sub>
 
 </div>
