@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 330" role="img" aria-labelledby="title desc">
+<title id="title">Frontend engineering card</title>
+<desc id="desc">Frontend stack represented by an animated desktop application interface.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" x2="1"><stop stop-color="#0d1020"/><stop offset="1" stop-color="#15182d"/></linearGradient>
+  <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#141a31"/><stop offset="1" stop-color="#0b1021"/></linearGradient>
+</defs>
+<rect width="1200" height="330" rx="26" fill="url(#bg)"/>
+<rect x="1" y="1" width="1198" height="328" rx="25" fill="none" stroke="#30385a"/>
+
+<text x="54" y="58" fill="#7f86a7" font-family="ui-monospace, monospace" font-size="14" letter-spacing="3">STACK / 02</text>
+<text x="54" y="110" fill="#fafaff" font-family="Arial, sans-serif" font-weight="700" font-size="42">Frontend applications</text>
+<text x="54" y="148" fill="#aeb3cc" font-family="Arial, sans-serif" font-size="18">Interfaces that stay clear, responsive and connected to real systems.</text>
+
+<g font-family="ui-monospace, monospace" font-size="15">
+  <text x="54" y="205" fill="#b6a5ff">Angular</text>
+  <text x="130" y="205" fill="#aeb3cc">React</text>
+  <text x="191" y="205" fill="#aeb3cc">RxJS</text>
+  <text x="242" y="205" fill="#aeb3cc">Vite</text>
+  <text x="54" y="238" fill="#aeb3cc">HTML</text>
+  <text x="108" y="238" fill="#aeb3cc">CSS / Sass</text>
+  <text x="204" y="238" fill="#aeb3cc">Bootstrap</text>
+  <text x="297" y="238" fill="#aeb3cc">Tailwind</text>
+  <text x="54" y="271" fill="#aeb3cc">Responsive UI</text>
+  <text x="166" y="271" fill="#aeb3cc">Accessibility</text>
+  <text x="276" y="271" fill="#aeb3cc">State</text>
+</g>
+
+<!-- monitor -->
+<g transform="translate(695 40)">
+  <rect x="0" y="0" width="450" height="232" rx="20" fill="#080b13" stroke="#4b5275"/>
+  <rect x="18" y="18" width="414" height="196" rx="14" fill="url(#screen)"/>
+  <circle cx="35" cy="34" r="4" fill="#ff7b7b"/>
+  <circle cx="49" cy="34" r="4" fill="#ffd66b"/>
+  <circle cx="63" cy="34" r="4" fill="#70e1a1"/>
+
+  <rect x="37" y="58" width="98" height="137" rx="10" fill="#11182c" stroke="#273354"/>
+  <rect x="153" y="58" width="246" height="50" rx="10" fill="#171f3a" stroke="#33406a"/>
+  <rect x="153" y="123" width="111" height="72" rx="10" fill="#11192f" stroke="#2c3b64"/>
+  <rect x="279" y="123" width="120" height="72" rx="10" fill="#11192f" stroke="#2c3b64"/>
+
+  <rect x="51" y="74" width="69" height="8" rx="4" fill="#8b7cff"/>
+  <rect x="51" y="95" width="50" height="6" rx="3" fill="#384362"/>
+  <rect x="51" y="112" width="61" height="6" rx="3" fill="#384362"/>
+  <rect x="51" y="129" width="45" height="6" rx="3" fill="#384362"/>
+
+  <rect x="169" y="73" width="98" height="9" rx="4.5" fill="#65d6ff"/>
+  <rect x="169" y="90" width="177" height="6" rx="3" fill="#3a4568"/>
+
+  <rect x="169" y="139" width="79" height="40" rx="8" fill="#1d2948">
+    <animate attributeName="fill" values="#1d2948;#273763;#1d2948" dur="5s" repeatCount="indefinite"/>
+  </rect>
+  <path d="M300 176 C315 143 332 165 346 145 S378 162 389 136" fill="none" stroke="#70e1a1" stroke-width="3" stroke-linecap="round"/>
+  <circle r="5" fill="#b6a5ff">
+    <animateMotion dur="6s" repeatCount="indefinite" path="M165 150 C230 95 320 100 380 160 C330 195 230 195 165 150"/>
+  </circle>
+
+  <path d="M190 232H260L278 263H172Z" fill="#101526" stroke="#414968"/>
+</g>
+</svg>

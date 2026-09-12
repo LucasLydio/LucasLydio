@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 330" role="img" aria-labelledby="title desc">
+<title id="title">Java ecosystem card</title>
+<desc id="desc">Java and Spring represented as an animated JVM circuit core.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" x2="1"><stop stop-color="#15100b"/><stop offset="1" stop-color="#211812"/></linearGradient>
+  <radialGradient id="core"><stop stop-color="#ffcf70"/><stop offset="1" stop-color="#7a4325"/></radialGradient>
+</defs>
+<rect width="1200" height="330" rx="26" fill="url(#bg)"/>
+<rect x="1" y="1" width="1198" height="328" rx="25" fill="none" stroke="#4a3324"/>
+
+<text x="54" y="58" fill="#9d816b" font-family="ui-monospace, monospace" font-size="14" letter-spacing="3">STACK / 03</text>
+<text x="54" y="110" fill="#fffaf4" font-family="Arial, sans-serif" font-weight="700" font-size="42">Java ecosystem</text>
+<text x="54" y="148" fill="#c9b4a1" font-family="Arial, sans-serif" font-size="18">Structured backend services with a mature enterprise toolchain.</text>
+
+<g font-family="ui-monospace, monospace" font-size="15">
+  <text x="54" y="205" fill="#ffd27c">Java</text>
+  <text x="105" y="205" fill="#c9b4a1">Spring Boot</text>
+  <text x="210" y="205" fill="#c9b4a1">Hibernate</text>
+  <text x="54" y="238" fill="#c9b4a1">Maven</text>
+  <text x="116" y="238" fill="#c9b4a1">Gradle</text>
+  <text x="177" y="238" fill="#c9b4a1">JUnit</text>
+  <text x="54" y="271" fill="#c9b4a1">REST services</text>
+  <text x="169" y="271" fill="#c9b4a1">Persistence</text>
+  <text x="260" y="271" fill="#c9b4a1">Testing</text>
+</g>
+
+<!-- JVM circuit -->
+<g transform="translate(740 42)" stroke-linecap="round">
+  <circle cx="190" cy="123" r="77" fill="#16120f" stroke="#6f4930" stroke-width="2"/>
+  <circle cx="190" cy="123" r="48" fill="url(#core)" opacity=".82">
+    <animate attributeName="opacity" values=".55;.95;.55" dur="4.5s" repeatCount="indefinite"/>
+  </circle>
+  <text x="190" y="116" fill="#fff6df" font-family="ui-monospace, monospace" font-size="20" text-anchor="middle">JVM</text>
+  <text x="190" y="141" fill="#ffddb0" font-family="ui-monospace, monospace" font-size="12" text-anchor="middle">SPRING CORE</text>
+
+  <g stroke="#9d643c" stroke-width="2" fill="none">
+    <path d="M113 123H48V70H7"/>
+    <path d="M267 123H332V70H373"/>
+    <path d="M190 46V10"/>
+    <path d="M190 200V236"/>
+    <path d="M137 69L91 30H43"/>
+    <path d="M243 177L289 216H342"/>
+  </g>
+
+  <g fill="#ffd27c">
+    <circle cx="7" cy="70" r="5"><animate attributeName="opacity" values=".2;1;.2" dur="3s" repeatCount="indefinite"/></circle>
+    <circle cx="373" cy="70" r="5"><animate attributeName="opacity" values=".2;1;.2" dur="3s" begin=".6s" repeatCount="indefinite"/></circle>
+    <circle cx="190" cy="10" r="5"><animate attributeName="opacity" values=".2;1;.2" dur="3s" begin="1.2s" repeatCount="indefinite"/></circle>
+    <circle cx="190" cy="236" r="5"><animate attributeName="opacity" values=".2;1;.2" dur="3s" begin="1.8s" repeatCount="indefinite"/></circle>
+    <circle cx="43" cy="30" r="5"><animate attributeName="opacity" values=".2;1;.2" dur="3s" begin="2.2s" repeatCount="indefinite"/></circle>
+    <circle cx="342" cy="216" r="5"><animate attributeName="opacity" values=".2;1;.2" dur="3s" begin="2.6s" repeatCount="indefinite"/></circle>
+  </g>
+</g>
+</svg>

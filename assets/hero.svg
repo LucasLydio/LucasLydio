@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+<title id="title">Lucas Lydio — Full Stack Software Engineer</title>
+<desc id="desc">Animated engineering system map connecting web, APIs, data and cloud.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" x2="1">
+    <stop offset="0" stop-color="#07111f"/>
+    <stop offset="1" stop-color="#10182a"/>
+  </linearGradient>
+  <linearGradient id="accent" x1="0" x2="1">
+    <stop offset="0" stop-color="#65d6ff"/>
+    <stop offset="0.5" stop-color="#8b7cff"/>
+    <stop offset="1" stop-color="#70e1a1"/>
+  </linearGradient>
+  <filter id="glow">
+    <feGaussianBlur stdDeviation="4" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+</defs>
+
+<rect width="1200" height="420" rx="28" fill="url(#bg)"/>
+<rect x="1" y="1" width="1198" height="418" rx="27" fill="none" stroke="#24314d"/>
+
+<!-- subtle grid -->
+<g stroke="#26344d" stroke-width="1" opacity=".22">
+  <path d="M0 70H1200M0 140H1200M0 210H1200M0 280H1200M0 350H1200"/>
+  <path d="M100 0V420M200 0V420M300 0V420M400 0V420M500 0V420M600 0V420M700 0V420M800 0V420M900 0V420M1000 0V420M1100 0V420"/>
+</g>
+
+<!-- identity -->
+<text x="72" y="92" fill="#91a4c7" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" letter-spacing="4">ENGINEERING PROFILE</text>
+<text x="72" y="160" fill="#f7fbff" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="58">Lucas Lydio</text>
+<text x="72" y="207" fill="url(#accent)" font-family="Arial, Helvetica, sans-serif" font-weight="600" font-size="28">Full Stack Software Engineer</text>
+<text x="72" y="254" fill="#bdc9dd" font-family="Arial, Helvetica, sans-serif" font-size="19">Backend architecture · web applications · cloud delivery · reliability</text>
+
+<g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15">
+  <rect x="72" y="292" width="150" height="38" rx="19" fill="#11213b" stroke="#2b4d78"/>
+  <text x="147" y="317" fill="#7ddcff" text-anchor="middle">NODE / TS</text>
+  <rect x="234" y="292" width="166" height="38" rx="19" fill="#171f3b" stroke="#4c4580"/>
+  <text x="317" y="317" fill="#a99cff" text-anchor="middle">ANGULAR / REACT</text>
+  <rect x="412" y="292" width="172" height="38" rx="19" fill="#13291f" stroke="#2f684e"/>
+  <text x="498" y="317" fill="#86e4ad" text-anchor="middle">JAVA / SPRING</text>
+</g>
+
+<text x="72" y="370" fill="#7284a6" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15">
+  BUILD → TEST → SHIP → OBSERVE → EVOLVE
+</text>
+
+<!-- system map -->
+<g transform="translate(690 56)">
+  <path id="p1" d="M100 90 C170 40 250 40 320 90" fill="none" stroke="#35547b" stroke-width="2"/>
+  <path id="p2" d="M320 90 C370 145 370 220 320 270" fill="none" stroke="#35547b" stroke-width="2"/>
+  <path id="p3" d="M320 270 C245 315 170 315 100 270" fill="none" stroke="#35547b" stroke-width="2"/>
+  <path id="p4" d="M100 270 C55 220 55 145 100 90" fill="none" stroke="#35547b" stroke-width="2"/>
+  <path id="p5" d="M100 90L320 270M320 90L100 270" fill="none" stroke="#233755" stroke-width="1.5"/>
+
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" text-anchor="middle">
+    <g>
+      <rect x="34" y="57" width="132" height="66" rx="18" fill="#0e2037" stroke="#3a75a7"/>
+      <circle cx="57" cy="79" r="5" fill="#65d6ff">
+        <animate attributeName="opacity" values=".35;1;.35" dur="4s" repeatCount="indefinite"/>
+      </circle>
+      <text x="100" y="86" fill="#e9f8ff">WEB</text>
+      <text x="100" y="107" fill="#7c92b2" font-size="11">Angular / React</text>
+    </g>
+
+    <g>
+      <rect x="254" y="57" width="132" height="66" rx="18" fill="#171a39" stroke="#6255a0"/>
+      <circle cx="277" cy="79" r="5" fill="#9c89ff">
+        <animate attributeName="opacity" values="1;.3;1" dur="4s" begin="1s" repeatCount="indefinite"/>
+      </circle>
+      <text x="320" y="86" fill="#f2efff">API</text>
+      <text x="320" y="107" fill="#8c86b7" font-size="11">Node / Java</text>
+    </g>
+
+    <g>
+      <rect x="254" y="237" width="132" height="66" rx="18" fill="#10261e" stroke="#36785a"/>
+      <circle cx="277" cy="259" r="5" fill="#70e1a1">
+        <animate attributeName="opacity" values=".3;1;.3" dur="4s" begin="2s" repeatCount="indefinite"/>
+      </circle>
+      <text x="320" y="266" fill="#ecfff3">DATA</text>
+      <text x="320" y="287" fill="#7fa28f" font-size="11">Postgres / Redis</text>
+    </g>
+
+    <g>
+      <rect x="34" y="237" width="132" height="66" rx="18" fill="#221b2a" stroke="#725086"/>
+      <circle cx="57" cy="259" r="5" fill="#c98cf0">
+        <animate attributeName="opacity" values="1;.3;1" dur="4s" begin="3s" repeatCount="indefinite"/>
+      </circle>
+      <text x="100" y="266" fill="#fbf0ff">CLOUD</text>
+      <text x="100" y="287" fill="#9a87a4" font-size="11">Docker / CI/CD</text>
+    </g>
+  </g>
+
+  <circle r="6" fill="#65d6ff" filter="url(#glow)">
+    <animateMotion dur="8s" repeatCount="indefinite" rotate="auto">
+      <mpath href="#p1"/>
+    </animateMotion>
+  </circle>
+  <circle r="5" fill="#70e1a1" filter="url(#glow)">
+    <animateMotion dur="8s" begin="2s" repeatCount="indefinite" rotate="auto">
+      <mpath href="#p2"/>
+    </animateMotion>
+  </circle>
+  <circle r="5" fill="#9c89ff" filter="url(#glow)">
+    <animateMotion dur="8s" begin="4s" repeatCount="indefinite" rotate="auto">
+      <mpath href="#p3"/>
+    </animateMotion>
+  </circle>
+  <circle r="5" fill="#c98cf0" filter="url(#glow)">
+    <animateMotion dur="8s" begin="6s" repeatCount="indefinite" rotate="auto">
+      <mpath href="#p4"/>
+    </animateMotion>
+  </circle>
+</g>
+</svg>

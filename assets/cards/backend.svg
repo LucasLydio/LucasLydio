@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 330" role="img" aria-labelledby="title desc">
+<title id="title">Backend engineering card</title>
+<desc id="desc">Backend stack with animated matrix-inspired code rain and service nodes.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" x2="1"><stop stop-color="#07151b"/><stop offset="1" stop-color="#0d1c26"/></linearGradient>
+  <linearGradient id="line" x1="0" x2="1"><stop stop-color="#50f0a4"/><stop offset="1" stop-color="#5ec8ff"/></linearGradient>
+  <clipPath id="matrixClip"><rect x="710" y="34" width="440" height="262" rx="22"/></clipPath>
+</defs>
+<rect width="1200" height="330" rx="26" fill="url(#bg)"/>
+<rect x="1" y="1" width="1198" height="328" rx="25" fill="none" stroke="#24404a"/>
+
+<text x="54" y="58" fill="#6b8191" font-family="ui-monospace, monospace" font-size="14" letter-spacing="3">STACK / 01</text>
+<text x="54" y="110" fill="#f5fffb" font-family="Arial, sans-serif" font-weight="700" font-size="42">Backend systems</text>
+<text x="54" y="148" fill="#9bb4bd" font-family="Arial, sans-serif" font-size="18">APIs, auth, business rules, caching and integrations.</text>
+
+<g font-family="ui-monospace, monospace" font-size="15">
+  <text x="54" y="205" fill="#63f0ae">TypeScript</text>
+  <text x="166" y="205" fill="#91a7b7">Node.js</text>
+  <text x="252" y="205" fill="#91a7b7">NestJS</text>
+  <text x="324" y="205" fill="#91a7b7">Express</text>
+  <text x="54" y="238" fill="#91a7b7">REST</text>
+  <text x="110" y="238" fill="#91a7b7">JWT / OAuth2</text>
+  <text x="225" y="238" fill="#91a7b7">RBAC</text>
+  <text x="279" y="238" fill="#91a7b7">WebSockets</text>
+  <text x="54" y="271" fill="#91a7b7">Clean Architecture</text>
+  <text x="205" y="271" fill="#91a7b7">SOLID</text>
+  <text x="263" y="271" fill="#91a7b7">Queues</text>
+</g>
+
+<!-- matrix scene -->
+<rect x="710" y="34" width="440" height="262" rx="22" fill="#06100f" stroke="#174436"/>
+<g clip-path="url(#matrixClip)" font-family="ui-monospace, monospace" font-size="14" fill="#55f29b">
+  <g opacity=".70">
+    <text x="735" y="22">const api = createServer()</text>
+    <text x="735" y="47">validate(request)</text>
+    <text x="735" y="72">await service.execute()</text>
+    <text x="735" y="97">cache.get(key)</text>
+    <text x="735" y="122">repository.save(entity)</text>
+    <text x="735" y="147">authorize(role)</text>
+    <text x="735" y="172">queue.publish(event)</text>
+    <text x="735" y="197">return response()</text>
+    <animateTransform attributeName="transform" type="translate" values="0,-90;0,330" dur="14s" repeatCount="indefinite"/>
+  </g>
+  <g opacity=".35">
+    <text x="940" y="5">101001</text>
+    <text x="940" y="32">POST /v1</text>
+    <text x="940" y="59">200 OK</text>
+    <text x="940" y="86">REDIS HIT</text>
+    <text x="940" y="113">JWT VALID</text>
+    <text x="940" y="140">TX COMMIT</text>
+    <text x="940" y="167">ASYNC JOB</text>
+    <animateTransform attributeName="transform" type="translate" values="0,-120;0,330" dur="11s" begin="1.5s" repeatCount="indefinite"/>
+  </g>
+</g>
+
+<g stroke="url(#line)" stroke-width="2" fill="#0b1c21">
+  <rect x="655" y="118" width="94" height="50" rx="12"/>
+  <rect x="1110" y="118" width="40" height="50" rx="10"/>
+  <path d="M655 143H618M749 143H785M1080 143H1110" stroke-dasharray="5 7">
+    <animate attributeName="stroke-dashoffset" values="0;-24" dur="2.8s" repeatCount="indefinite"/>
+  </path>
+</g>
+</svg>

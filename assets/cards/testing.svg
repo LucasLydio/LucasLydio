@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 330" role="img" aria-labelledby="title desc">
+<title id="title">Testing and quality card</title>
+<desc id="desc">Unit, integration and end-to-end testing shown as an animated pipeline row.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" x2="1"><stop stop-color="#0d1412"/><stop offset="1" stop-color="#151d19"/></linearGradient>
+  <linearGradient id="pipe" x1="0" x2="1"><stop stop-color="#6ce3a2"/><stop offset="1" stop-color="#9b8cff"/></linearGradient>
+</defs>
+<rect width="1200" height="330" rx="26" fill="url(#bg)"/>
+<rect x="1" y="1" width="1198" height="328" rx="25" fill="none" stroke="#2d4a3b"/>
+
+<text x="54" y="58" fill="#779787" font-family="ui-monospace, monospace" font-size="14" letter-spacing="3">STACK / 05</text>
+<text x="54" y="110" fill="#f7fff9" font-family="Arial, sans-serif" font-weight="700" font-size="42">Testing &amp; quality</text>
+<text x="54" y="148" fill="#a9c3b4" font-family="Arial, sans-serif" font-size="18">Confidence built progressively, from isolated logic to complete user flows.</text>
+
+<g font-family="ui-monospace, monospace" font-size="15">
+  <text x="54" y="205" fill="#70e1a1">Jest</text>
+  <text x="101" y="205" fill="#a9c3b4">Vitest</text>
+  <text x="163" y="205" fill="#a9c3b4">Cypress</text>
+  <text x="236" y="205" fill="#a9c3b4">Playwright</text>
+  <text x="54" y="238" fill="#a9c3b4">JUnit</text>
+  <text x="105" y="238" fill="#a9c3b4">ESLint</text>
+  <text x="165" y="238" fill="#a9c3b4">Prettier</text>
+  <text x="54" y="271" fill="#a9c3b4">Unit</text>
+  <text x="101" y="271" fill="#a9c3b4">Integration</text>
+  <text x="194" y="271" fill="#a9c3b4">E2E</text>
+</g>
+
+<!-- pipeline -->
+<g transform="translate(645 78)" font-family="ui-monospace, monospace">
+  <path id="pipeline" d="M40 88H445" fill="none" stroke="#315344" stroke-width="8" stroke-linecap="round"/>
+  <path d="M40 88H445" fill="none" stroke="url(#pipe)" stroke-width="3" stroke-dasharray="8 12">
+    <animate attributeName="stroke-dashoffset" values="0;-40" dur="3s" repeatCount="indefinite"/>
+  </path>
+
+  <g text-anchor="middle">
+    <g transform="translate(40)">
+      <circle cy="88" r="25" fill="#10251b" stroke="#4a9b6c"/>
+      <text y="93" fill="#9ff3c0" font-size="13">UNIT</text>
+      <text y="145" fill="#769586" font-size="11">logic</text>
+    </g>
+    <g transform="translate(175)">
+      <circle cy="88" r="25" fill="#14251f" stroke="#5da27d"/>
+      <text y="93" fill="#b5f0cc" font-size="12">INT</text>
+      <text y="145" fill="#769586" font-size="11">modules</text>
+    </g>
+    <g transform="translate(310)">
+      <circle cy="88" r="25" fill="#1c2030" stroke="#7568a7"/>
+      <text y="93" fill="#c4baff" font-size="12">E2E</text>
+      <text y="145" fill="#827d9c" font-size="11">flows</text>
+    </g>
+    <g transform="translate(445)">
+      <circle cy="88" r="25" fill="#242033" stroke="#8d6fb0"/>
+      <text y="93" fill="#d3b8f0" font-size="11">SHIP</text>
+      <text y="145" fill="#91819d" font-size="11">release</text>
+    </g>
+  </g>
+
+  <circle r="7" fill="#ffffff">
+    <animateMotion dur="6s" repeatCount="indefinite">
+      <mpath href="#pipeline"/>
+    </animateMotion>
+  </circle>
+</g>
+</svg>
