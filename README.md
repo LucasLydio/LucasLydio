@@ -7,11 +7,9 @@
 
 <div align="center">
 
-<div align="center">
-  <img src="./assets/profile-card.svg" alt="Profile Card" />
-  <br />
-</div>
+<img src="./assets/gifs/bomber_animation.gif" width="160" alt="Bomberman running animation" />
 
+<br/><br/>
 
 **Hi, I'm Lucas — a Full Stack Developer who likes building reliable systems and keeping things fun while shipping.**  
 
@@ -20,10 +18,15 @@ I enjoy working across the full flow:
 
 When I’m coding, I’m usually thinking about how to make software more:
 **clear, scalable, testable, and easier to operate**.
+
+And yes — a little bit like Bomberman:  
+moving fast, avoiding chaos, and clearing the path one problem at a time. 💣
+
 </div>
 
 <div align="center">
 
+<br/><br/>
 
 <a href="https://github.com/LucasLydio?tab=repositories">
   Explore my repositories →
@@ -31,7 +34,15 @@ When I’m coding, I’m usually thinking about how to make software more:
 
 </div>
 
+---
 
+## About me
+
+I work across the full application lifecycle: **APIs, interfaces, data, testing, deployment and observability**.
+
+I care about software that is easy to **understand → test → deploy → observe → evolve**.
+
+---
 
 # Stack
 
@@ -197,7 +208,7 @@ A DevOps CLI for repeatable server setup, deployment and operational workflows a
     srcset="https://streak-stats.demolab.com?user=LucasLydio&theme=github-dark-blue&hide_border=true"
   />
   <img
-    width="500px"
+    width="400px"
     alt="Lucas Lydio GitHub contribution streak"
     src="https://streak-stats.demolab.com?user=LucasLydio&theme=default&hide_border=true"
   />
