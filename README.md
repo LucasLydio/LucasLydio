@@ -7,10 +7,32 @@
 
 <div align="center">
 
-<img src="./assets/gifs/bomber_animation.gif" width="160" alt="Bomberman running animation" />
-
-<br/><br/>
-
+<!-- <div align="center">
+  <img src="./assets/profile-card.svg" alt="Profile Card" />
+  <br />
+  
+</div> -->
+ <div align="center">
+  <table border="0">
+    <tr>
+      <td width="110" align="center" valign="middle">
+        <img src="./assets/profile/profilegit.webp" width="95" height="95" style="border-radius: 50%; border: 3px solid #ff0055; object-fit: cover;" alt="Lucas Lydio" />
+      </td>
+      <td valign="middle" align="left">
+        <h3 style="color: #00f0ff; margin: 0;">Lucas Lydio</h3>
+        <p style="color: #ff0055; margin: 2px 0; font-weight: bold; font-size: 12px;">PLAYER 1 • FULL-STACK DEVELOPER</p>
+        <p style="margin: 6px 0;">
+          <code>TypeScript</code> <code>React</code> <code>Node.js</code>
+        </p>
+        <p style="font-size: 12px; color: #8b949e; margin: 0;">
+          🎮 Building web apps &amp; breaking code<br/>
+          📍 Location: Online
+        </p>
+      </td>
+    </tr>
+  </table>
+</div>
+<div align="left">
 **Hi, I'm Lucas — a Full Stack Developer who likes building reliable systems and keeping things fun while shipping.**  
 
 I enjoy working across the full flow:  
@@ -19,14 +41,12 @@ I enjoy working across the full flow:
 When I’m coding, I’m usually thinking about how to make software more:
 **clear, scalable, testable, and easier to operate**.
 
-And yes — a little bit like Bomberman:  
-moving fast, avoiding chaos, and clearing the path one problem at a time. 💣
+</div>
 
 </div>
 
 <div align="center">
 
-<br/><br/>
 
 <a href="https://github.com/LucasLydio?tab=repositories">
   Explore my repositories →
@@ -34,15 +54,7 @@ moving fast, avoiding chaos, and clearing the path one problem at a time. 💣
 
 </div>
 
----
 
-## About me
-
-I work across the full application lifecycle: **APIs, interfaces, data, testing, deployment and observability**.
-
-I care about software that is easy to **understand → test → deploy → observe → evolve**.
-
----
 
 # Stack
 
