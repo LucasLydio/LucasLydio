@@ -208,7 +208,7 @@ A DevOps CLI for repeatable server setup, deployment and operational workflows a
     srcset="https://streak-stats.demolab.com?user=LucasLydio&theme=github-dark-blue&hide_border=true"
   />
   <img
-    width="400px"
+    width="500px"
     alt="Lucas Lydio GitHub contribution streak"
     src="https://streak-stats.demolab.com?user=LucasLydio&theme=default&hide_border=true"
   />
