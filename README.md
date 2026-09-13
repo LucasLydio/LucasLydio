@@ -9,19 +9,6 @@
 
 <img src="./assets/gifs/bomber_animation.gif" width="160" alt="Bomberman running animation" />
 
-<br/><br/>
-
-**Hi, I'm Lucas — a Full Stack Developer who likes building reliable systems and keeping things fun while shipping.**  
-
-I enjoy working across the full flow:  
-**backend architecture → frontend experience → CI/CD → production reliability**
-
-When I’m coding, I’m usually thinking about how to make software more:
-**clear, scalable, testable, and easier to operate**.
-
-And yes — a little bit like Bomberman:  
-moving fast, avoiding chaos, and clearing the path one problem at a time. 💣
-
 </div>
 
 <div align="center">
