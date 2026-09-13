@@ -3,28 +3,28 @@
   Direction: vertical, illustration-led, no table/flex grid
   Free illustrations: unDraw (https://undraw.co/license)
 -->
+## Hello!
 
 <div align="center">
 
-# Lucas Lydio
+<img src="./assets/gifs/bomber_animation.gif" width="160" alt="Bomberman running animation" />
 
-### Full Stack Developer · Software Engineer
+<br/><br/>
 
-**Backend architecture · Web applications · Cloud delivery · Software quality**
+**Hi, I'm Lucas — a Full Stack Developer who likes building reliable systems and keeping things fun while shipping.**  
 
-Building software from the API contract to the interface, deployment pipeline and production runtime.
+I enjoy working across the full flow:  
+**backend architecture → frontend experience → CI/CD → production reliability**
 
-<br/>
+When I’m coding, I’m usually thinking about how to make software more:
+**clear, scalable, testable, and easier to operate**.
 
-<img
-  src="https://raw.githubusercontent.com/cuuupid/undraw-illustrations/master/svg/programming_2svr.svg"
-  width="360"
-  alt="Programming illustration"
-/>
+And yes — a little bit like Bomberman:  
+moving fast, avoiding chaos, and clearing the path one problem at a time. 💣
 
-<br/>
+</div>
 
-`Node.js + TypeScript` · `Angular + React` · `Java + Spring Boot` · `Cloud + DevOps`
+<div align="center">
 
 <br/><br/>
 
@@ -174,6 +174,10 @@ A developer-focused platform exploring the path from repository events to builds
 
 **Infrastructure and deployment automation from the command line.**
 
+<img src="./assets/projects/appilot.webp" width="350px" alt="Bomberman running animation" />
+
+<br>
+
 A DevOps CLI for repeatable server setup, deployment and operational workflows across VPS environments.
 
 `Docker` · `Nginx` · `Linux` · `SSL` · `Deployment Automation`
@@ -181,16 +185,6 @@ A DevOps CLI for repeatable server setup, deployment and operational workflows a
 [Explore repositories →](https://github.com/LucasLydio?tab=repositories)
 
 ---
-
-## 🔁 Webhook Reliability Hub
-
-**Reliable event processing and failure recovery.**
-
-A backend architecture project exploring provider strategies, queues, retries and resilient webhook processing.
-
-`NestJS` · `TypeScript` · `PostgreSQL` · `Prisma` · `Redis`
-
-[Explore repositories →](https://github.com/LucasLydio?tab=repositories)
 
 ---
 
@@ -214,7 +208,7 @@ A backend architecture project exploring provider strategies, queues, retries an
     srcset="https://streak-stats.demolab.com?user=LucasLydio&theme=github-dark-blue&hide_border=true"
   />
   <img
-    width="100%"
+    width="400px"
     alt="Lucas Lydio GitHub contribution streak"
     src="https://streak-stats.demolab.com?user=LucasLydio&theme=default&hide_border=true"
   />
