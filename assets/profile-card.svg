@@ -1,755 +1,388 @@
 <svg
-  width="400"
+  width="100%"
   height="auto"
-  viewBox="0 0 550 380"
+  viewBox="0 0 750 420"
   xmlns="http://www.w3.org/2000/svg"
   role="img"
   aria-labelledby="title desc"
 >
-  <title id="title">Lucas Lydio - Full Stack Developer Battle</title>
-  <desc id="desc">
-    Animated stick battle showing Lucas fighting software bugs.
-  </desc>
+  <title id="title">AAA Stick Fight - Lucas Lydio vs BUG.EXE</title>
+  <desc id="desc">Pure animated SVG stick fight featuring anticipation, smear frames, hit-stops, and screen shake.</desc>
 
   <defs>
-    <!-- Background -->
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#070b10"/>
-      <stop offset="100%" stop-color="#0d1117"/>
-    </linearGradient>
-
-    <!-- Player -->
-    <linearGradient id="playerGradient" x1="0" x2="1">
-      <stop offset="0%" stop-color="#00f0ff"/>
-      <stop offset="100%" stop-color="#00a8ff"/>
-    </linearGradient>
-
-    <!-- Enemy -->
-    <linearGradient id="enemyGradient" x1="0" x2="1">
-      <stop offset="0%" stop-color="#ff0055"/>
-      <stop offset="100%" stop-color="#ff5e00"/>
-    </linearGradient>
-
-    <!-- Glow -->
-    <filter id="cyanGlow">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
+    <!-- Cyan Hero Glow -->
+    <filter id="cyanGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3.5" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
 
-    <filter id="redGlow">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
+    <!-- Red Enemy Glow -->
+    <filter id="redGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3.5" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
+
+    <!-- Background Dark Gradient -->
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#06090e"/>
+      <stop offset="100%" stop-color="#0d131c"/>
+    </linearGradient>
+
+    <!-- Impact Burst Gradient -->
+    <radialGradient id="impactGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#00f0ff"/>
+      <stop offset="100%" stop-color="#00f0ff" stop-opacity="0"/>
+    </radialGradient>
   </defs>
 
-  <style>
-    /* ==============================
-       GLOBAL
-       ============================== */
+  <style><![CDATA[
+    /* ==========================================================================
+       1. GLOBAL AND TYPOGRAPHY
+       ========================================================================== */
+    .mono { font-family: "JetBrains Mono", Consolas, monospace; }
+    .ui   { font-family: "Segoe UI", system-ui, sans-serif; }
 
-    .mono {
-      font-family:
-        "JetBrains Mono",
-        "SFMono-Regular",
-        Consolas,
-        monospace;
+    /* ==========================================================================
+       2. AAA TIMELINE KEYFRAMES (4.0s Loop)
+          0% - 20%: Walk Forward
+          20% - 32%: Anticipation Wind-up (Crouch + Load Punch)
+          32% - 37%: Extreme Velocity Strike + Smear Frame
+          37% - 44%: HIT STOP (Frame Freeze) + CAMERA SCREEN SHAKE
+          44% - 60%: Explosive Knockback Physics
+          60% - 80%: Recovery + Walk Back to Origin
+          80% - 100%: Idle Reset
+       ========================================================================== */
+
+    /* --- CAMERA SCREEN SHAKE (Jitter on Hit Stop) --- */
+    #stage-shake {
+      animation: cameraShake 4.0s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+      transform-origin: 375px 210px;
     }
 
-    .ui {
-      font-family:
-        "Segoe UI",
-        Arial,
-        sans-serif;
+    @keyframes cameraShake {
+      0%, 36.9%, 44.5%, 100% { transform: translate(0, 0) rotate(0deg); }
+      37%   { transform: translate(-14px, 8px) rotate(-1.5deg); }
+      38%   { transform: translate(16px, -10px) rotate(1.8deg); }
+      39%   { transform: translate(-12px, -8px) rotate(-1deg); }
+      40%   { transform: translate(10px, 12px) rotate(1.2deg); }
+      41%   { transform: translate(-7px, 5px) rotate(-0.5deg); }
+      42%   { transform: translate(5px, -3px) rotate(0.4deg); }
+      43%   { transform: translate(-2px, 1px) rotate(0deg); }
     }
 
-    /* ==============================
-       PLAYER
-       ============================== */
-
-    #player {
-      transform-origin: 175px 248px;
-      animation: playerIdle 1.5s ease-in-out infinite;
+    /* --- HERO POSITION AND WEIGHT TRANSFER --- */
+    #hero-root {
+      animation: heroPhysics 4.0s cubic-bezier(0.85, 0, 0.15, 1) infinite;
     }
 
-    #player-arm {
-      transform-origin: 181px 210px;
-      animation: punch 2.8s ease-in-out infinite;
+    @keyframes heroPhysics {
+      0%   { transform: translate(0px, 0px) rotate(0deg); }
+      20%  { transform: translate(95px, 0px) rotate(0deg); }      /* Walked forward */
+      28%  { transform: translate(70px, 14px) rotate(-16deg); }   /* ANTICIPATION: Crouch low and lean back */
+      36%  { transform: translate(180px, -4px) rotate(14deg); }   /* HIGH-VELOCITY LUNGE */
+      37%, 44% { transform: translate(180px, -4px) rotate(14deg); } /* HIT STOP: Freeze frame hold */
+      56%  { transform: translate(160px, 0px) rotate(4deg); }     /* Follow-through stance */
+      78%  { transform: translate(0px, 0px) rotate(0deg); }      /* Walk back complete */
+      100% { transform: translate(0px, 0px) rotate(0deg); }
     }
 
-    #player-body {
-      animation: bodyAttack 2.8s ease-in-out infinite;
+    /* --- HERO LEGS (IK Ground Anchoring and Walk Cycle) --- */
+    #p-leg-left {
+      transform-origin: 190px 240px;
+      animation: heroLegLeft 4.0s ease-in-out infinite;
+    }
+    #p-leg-right {
+      transform-origin: 190px 240px;
+      animation: heroLegRight 4.0s ease-in-out infinite;
     }
 
-    /* ==============================
-       ENEMY
-       ============================== */
-
-    #enemy {
-      transform-origin: 385px 244px;
-      animation: enemyHit 2.8s ease-in-out infinite;
+    @keyframes heroLegLeft {
+      0%, 20%, 37%, 100% { transform: rotate(0deg); }
+      4%, 12%  { transform: rotate(-38deg); } /* Walking step */
+      8%, 16%  { transform: rotate(32deg); }
+      28%      { transform: rotate(-45deg) scaleY(0.85); } /* Deep Knee Bend */
+      36%      { transform: rotate(48deg); }  /* Extended back leg push */
+      64%, 72% { transform: rotate(-30deg); } /* Walk back */
+      68%, 76% { transform: rotate(25deg); }
     }
 
-    #enemy-eyes {
-      animation: enemyBlink 3.5s infinite;
+    @keyframes heroLegRight {
+      0%, 20%, 37%, 100% { transform: rotate(0deg); }
+      4%, 12%  { transform: rotate(32deg); }
+      8%, 16%  { transform: rotate(-38deg); }
+      28%      { transform: rotate(25deg) scaleY(0.85); } /* Deep Knee Bend */
+      36%      { transform: rotate(-30deg); } /* Braced front leg */
+      64%, 72% { transform: rotate(25deg); }
+      68%, 76% { transform: rotate(-30deg); }
     }
 
-    /* ==============================
-       EFFECTS
-       ============================== */
-
-    #impact {
-      transform-origin: 330px 205px;
-      animation: impactFlash 2.8s ease-out infinite;
+    /* --- HERO PUNCHING ARM (Extending Strike and Loaded Wind-up) --- */
+    #p-arm-lead {
+      transform-origin: 192px 190px;
+      animation: heroPunch 4.0s cubic-bezier(0.11, 0, 0.5, 0) infinite;
     }
 
-    #fixed-text {
-      animation: fixedText 2.8s ease-out infinite;
+    @keyframes heroPunch {
+      0%, 20%  { transform: rotate(0deg) scaleX(1); }
+      28%      { transform: rotate(-85deg) scaleX(0.9); } /* ANTICIPATION: Fist loaded deep back */
+      36%, 44% { transform: rotate(50deg) scaleX(1.4); }  /* STRIKE + HIT STOP HOLD */
+      54%      { transform: rotate(15deg) scaleX(1); }    /* Recovery */
+      78%, 100%{ transform: rotate(0deg) scaleX(1); }
     }
 
-    #damage {
-      animation: damageText 2.8s ease-out infinite;
+    /* --- SMEAR FRAME (High-Speed Motion Trail) --- */
+    #smear-trail {
+      animation: smearFlash 4.0s ease-out infinite;
+      transform-origin: 250px 190px;
     }
 
-    #projectile {
-      animation: projectile 2.8s ease-out infinite;
+    @keyframes smearFlash {
+      0%, 33.5%, 37.5%, 100% { opacity: 0; transform: scaleX(0.1) rotate(0deg); }
+      34.5% { opacity: 0.95; transform: scaleX(1.3) rotate(5deg); } /* Visible only on max velocity frames */
+      36.5% { opacity: 0.7; transform: scaleX(1.1) rotate(8deg); }
     }
 
-    .grid-line {
-      animation: gridPulse 4s ease-in-out infinite alternate;
+    /* --- FLUTTERING HEADBAND TAILS --- */
+    #p-headband {
+      transform-origin: 180px 162px;
+      animation: headbandWiggle 0.8s ease-in-out infinite alternate;
+    }
+    @keyframes headbandWiggle {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(-14deg); }
     }
 
-    /* ==============================
-       ANIMATIONS
-       ============================== */
-
-    @keyframes playerIdle {
-      0%, 100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-3px);
-      }
+    /* --- ENEMY KNOCKBACK AND CRASH PHYSICS --- */
+    #enemy-root {
+      animation: enemyImpact 4.0s cubic-bezier(0.15, 0.85, 0.35, 1.2) infinite;
+      transform-origin: 510px 240px;
     }
 
-    @keyframes bodyAttack {
-      0%, 48%, 100% {
-        transform: translateX(0);
-      }
-
-      56% {
-        transform: translateX(12px);
-      }
-
-      68% {
-        transform: translateX(0);
-      }
+    @keyframes enemyImpact {
+      0%, 36.5% { transform: translate(0px, 0px) rotate(0deg); }
+      37%, 44%  { transform: translate(18px, -10px) rotate(22deg); } /* HIT STOP pose */
+      52%       { transform: translate(175px, -55px) rotate(75deg); } /* AIRBORNE FLYING KNOCKBACK */
+      58%       { transform: translate(155px, 12px) rotate(88deg); }  /* CRASH FLOOR LANDING */
+      64%       { transform: translate(145px, 4px) rotate(80deg); }   /* Ground bounce */
+      82%       { transform: translate(0px, 0px) rotate(0deg); }      /* Stagger stand up */
+      100%      { transform: translate(0px, 0px) rotate(0deg); }
     }
 
-    @keyframes punch {
-      0%, 45%, 100% {
-        transform: rotate(0deg);
-      }
-
-      53% {
-        transform: rotate(-12deg);
-      }
-
-      58% {
-        transform: rotate(-68deg);
-      }
-
-      68% {
-        transform: rotate(0deg);
-      }
+    /* --- IMPACT VFX (Shockwave Ring, Sparks, KO Text) --- */
+    #vfx-ring {
+      animation: ringExpand 4.0s ease-out infinite;
+      transform-origin: 460px 190px;
+    }
+    @keyframes ringExpand {
+      0%, 36.5%, 48%, 100% { opacity: 0; transform: scale(0.1); stroke-width: 10px; }
+      37% { opacity: 1; transform: scale(0.6); stroke-width: 8px; }
+      43% { opacity: 0.8; transform: scale(2.2); stroke-width: 2px; }
     }
 
-    @keyframes enemyHit {
-      0%, 55%, 100% {
-        transform: translateX(0) rotate(0deg);
-      }
-
-      61% {
-        transform: translateX(13px) rotate(5deg);
-      }
-
-      68% {
-        transform: translateX(-5px) rotate(-3deg);
-      }
-
-      76% {
-        transform: translateX(0) rotate(0deg);
-      }
+    #vfx-sparks {
+      animation: sparkBurst 4.0s ease-out infinite;
+      transform-origin: 460px 190px;
+    }
+    @keyframes sparkBurst {
+      0%, 36.5%, 48%, 100% { opacity: 0; transform: scale(0.2) rotate(0deg); }
+      37% { opacity: 1; transform: scale(1.4) rotate(15deg); }
+      43% { opacity: 0; transform: scale(2.4) rotate(45deg); }
     }
 
-    @keyframes enemyBlink {
-      0%, 92%, 100% {
-        opacity: 1;
-      }
-
-      95% {
-        opacity: 0.15;
-      }
+    #vfx-text {
+      animation: koTextPop 4.0s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
+    }
+    @keyframes koTextPop {
+      0%, 36.5%, 55%, 100% { opacity: 0; transform: translateY(0px) scale(0.5); }
+      37% { opacity: 1; transform: translateY(-30px) scale(1.3); }
+      44% { opacity: 1; transform: translateY(-40px) scale(1.1); }
+      52% { opacity: 0; transform: translateY(-60px) scale(0.9); }
     }
 
-    @keyframes impactFlash {
-      0%, 53%, 72%, 100% {
-        opacity: 0;
-        transform: scale(0.2) rotate(0deg);
-      }
+    .grid-bg { animation: gridPulse 4s ease-in-out infinite alternate; }
+    @keyframes gridPulse { from { opacity: 0.1; } to { opacity: 0.25; } }
+  ]]></style>
 
-      58% {
-        opacity: 1;
-        transform: scale(1.3) rotate(20deg);
-      }
+  <!-- ==========================================================================
+       3. BACKGROUND AND ARENA GRID
+       ========================================================================== -->
+  <rect x="2" y="2" width="746" height="416" rx="14" fill="url(#bgGrad)" stroke="#1f2937" stroke-width="2"/>
 
-      65% {
-        opacity: 0.3;
-        transform: scale(1.8) rotate(45deg);
-      }
-    }
-
-    @keyframes fixedText {
-      0%, 57%, 100% {
-        opacity: 0;
-        transform: translateY(0);
-      }
-
-      62% {
-        opacity: 1;
-        transform: translateY(-4px);
-      }
-
-      78% {
-        opacity: 0;
-        transform: translateY(-28px);
-      }
-    }
-
-    @keyframes damageText {
-      0%, 57%, 100% {
-        opacity: 0;
-        transform: translateY(0);
-      }
-
-      61% {
-        opacity: 1;
-      }
-
-      78% {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-    }
-
-    @keyframes projectile {
-      0%, 48%, 100% {
-        opacity: 0;
-        transform: translateX(0);
-      }
-
-      51% {
-        opacity: 1;
-        transform: translateX(0);
-      }
-
-      60% {
-        opacity: 1;
-        transform: translateX(115px);
-      }
-
-      62% {
-        opacity: 0;
-      }
-    }
-
-    @keyframes gridPulse {
-      from {
-        opacity: 0.08;
-      }
-
-      to {
-        opacity: 0.22;
-      }
-    }
-  </style>
-
-  <!-- ==============================
-       BACKGROUND
-       ============================== -->
-
-  <rect
-    x="2"
-    y="2"
-    width="546"
-    height="376"
-    rx="14"
-    fill="url(#bg)"
-    stroke="#30363d"
-    stroke-width="2"
-  />
-
-  <!-- Grid -->
-
-  <g
-    stroke="#00f0ff"
-    stroke-width="0.7"
-    opacity="0.12"
-    class="grid-line"
-  >
-    <path d="M0 80 H550"/>
-    <path d="M0 120 H550"/>
-    <path d="M0 160 H550"/>
-    <path d="M0 200 H550"/>
-    <path d="M0 240 H550"/>
-    <path d="M0 280 H550"/>
-    <path d="M0 320 H550"/>
-
-    <path d="M50 0 V380"/>
-    <path d="M100 0 V380"/>
-    <path d="M150 0 V380"/>
-    <path d="M200 0 V380"/>
-    <path d="M250 0 V380"/>
-    <path d="M300 0 V380"/>
-    <path d="M350 0 V380"/>
-    <path d="M400 0 V380"/>
-    <path d="M450 0 V380"/>
-    <path d="M500 0 V380"/>
+  <g stroke="#00f0ff" stroke-width="0.8" class="grid-bg">
+    <path d="M0 100 H750 M0 150 H750 M0 200 H750 M0 250 H750 M0 300 H750 M0 350 H750"/>
+    <path d="M100 0 V420 M200 0 V420 M300 0 V420 M400 0 V420 M500 0 V420 M600 0 V420 M700 0 V420"/>
   </g>
 
-  <!-- ==============================
-       HEADER
-       ============================== -->
+  <!-- Ground Line and Dynamic Shadows -->
+  <line x1="40" y1="320" x2="710" y2="320" stroke="#374151" stroke-width="4"/>
 
-  <text
-    x="25"
-    y="32"
-    class="mono"
-    font-size="12"
-    letter-spacing="2"
-    fill="#8b949e"
-  >
-    DEVELOPER BATTLE // ROUND 01
-  </text>
+  <!-- ==========================================================================
+       4. MAIN STAGE (CONTAINER FOR SCREEN SHAKE)
+       ========================================================================== -->
+  <g id="stage-shake">
 
-  <text
-    x="25"
-    y="62"
-    class="ui"
-    font-size="23"
-    font-weight="700"
-    fill="#ffffff"
-  >
-    Lucas Lydio
-  </text>
+    <!-- Floor Shadows -->
+    <ellipse cx="190" cy="322" rx="42" ry="6" fill="#00f0ff" opacity="0.25" filter="url(#cyanGlow)"/>
+    <ellipse cx="510" cy="322" rx="48" ry="6" fill="#ff0055" opacity="0.25" filter="url(#redGlow)"/>
 
-  <text
-    x="25"
-    y="82"
-    class="mono"
-    font-size="11"
-    fill="#00f0ff"
-  >
-    FULL-STACK DEVELOPER
-  </text>
-
-  <!-- ==============================
-       HEALTH BARS
-       ============================== -->
-
-  <!-- Player HP -->
-
-  <text
-    x="25"
-    y="112"
-    class="mono"
-    font-size="10"
-    fill="#00f0ff"
-  >
-    PLAYER 1
-  </text>
-
-  <rect
-    x="25"
-    y="120"
-    width="180"
-    height="10"
-    rx="5"
-    fill="#161b22"
-  />
-
-  <rect
-    x="25"
-    y="120"
-    width="172"
-    height="10"
-    rx="5"
-    fill="url(#playerGradient)"
-  />
-
-  <!-- Enemy HP -->
-
-  <text
-    x="525"
-    y="112"
-    text-anchor="end"
-    class="mono"
-    font-size="10"
-    fill="#ff0055"
-  >
-    BUG.EXE
-  </text>
-
-  <rect
-    x="345"
-    y="120"
-    width="180"
-    height="10"
-    rx="5"
-    fill="#161b22"
-  />
-
-  <rect
-    x="365"
-    y="120"
-    width="160"
-    height="10"
-    rx="5"
-    fill="url(#enemyGradient)"
-  >
-    <animate
-      attributeName="width"
-      values="160;160;118;118;160"
-      keyTimes="0;0.55;0.64;0.85;1"
-      dur="2.8s"
-      repeatCount="indefinite"
-    />
-  </rect>
-
-  <!-- ==============================
-       PLAYER STICK FIGURE
-       ============================== -->
-
-  <g
-    id="player"
-    stroke="#00f0ff"
-    stroke-width="7"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    filter="url(#cyanGlow)"
-  >
-
-    <!-- head -->
-
-    <circle
-      cx="175"
-      cy="178"
-      r="18"
-      fill="#0d1117"
-    />
-
-    <!-- body -->
-
-    <g id="player-body">
-
-      <path d="M175 198 L175 255"/>
-
-      <!-- left arm -->
-
-      <path d="M174 210 L140 232"/>
-
-      <!-- punching arm -->
-
-      <g id="player-arm">
-        <path d="M181 210 L220 218"/>
-        <circle
-          cx="225"
-          cy="219"
-          r="7"
-          fill="#00f0ff"
-          stroke="none"
-        />
+    <!-- ========================================================================
+         HERO STICKMAN (LUCAS LYDIO)
+         ======================================================================== -->
+    <g id="hero-root" filter="url(#cyanGlow)">
+      
+      <!-- Flowing Headband Tails -->
+      <g id="p-headband">
+        <path d="M176 158 Q158 162 142 152 M176 160 Q156 172 138 168" stroke="#00f0ff" stroke-width="4" fill="none" stroke-linecap="round"/>
       </g>
 
-      <!-- legs -->
+      <!-- Head and Cyber Visor -->
+      <g id="p-head">
+        <circle cx="192" cy="160" r="16" fill="#06090e" stroke="#00f0ff" stroke-width="4"/>
+        <line x1="182" y1="158" x2="204" y2="158" stroke="#00f0ff" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="202" cy="158" r="2.5" fill="#ffffff"/>
+      </g>
 
-      <path d="M175 255 L145 298"/>
-      <path d="M175 255 L210 296"/>
+      <!-- Spine / Torso -->
+      <path d="M192 176 L190 240" stroke="#00f0ff" stroke-width="8" stroke-linecap="round"/>
 
+      <!-- Legs (Articulated Joints) -->
+      <!-- Left Leg (Back) -->
+      <g id="p-leg-left">
+        <path d="M190 240 L168 278 L152 320" stroke="#00f0ff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M152 320 L138 320" stroke="#00f0ff" stroke-width="4" stroke-linecap="round"/>
+      </g>
+
+      <!-- Right Leg (Front) -->
+      <g id="p-leg-right">
+        <path d="M190 240 L212 278 L228 320" stroke="#00f0ff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M228 320 L242 320" stroke="#00f0ff" stroke-width="4" stroke-linecap="round"/>
+      </g>
+
+      <!-- Rear Guard Arm -->
+      <g id="p-arm-rear">
+        <path d="M192 188 L170 206 L182 224" stroke="#00f0ff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="182" cy="224" r="6.5" fill="#00a8ff"/>
+      </g>
+
+      <!-- Lead Punching Arm and Heavy Glove -->
+      <g id="p-arm-lead">
+        <path d="M192 188 L222 190 L250 190" stroke="#00f0ff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="254" cy="190" r="10" fill="#00f0ff"/>
+        <circle cx="254" cy="190" r="4.5" fill="#ffffff"/>
+      </g>
+
+      <!-- SMEAR FRAME (High-Speed Arc Blur Trail) -->
+      <path id="smear-trail" d="M220 162 Q350 148 440 190 Q350 225 220 210 Z" fill="url(#impactGrad)"/>
     </g>
 
+    <!-- ========================================================================
+         ENEMY STICKMAN (BUG.EXE)
+         ======================================================================== -->
+    <g id="enemy-root" filter="url(#redGlow)">
+      
+      <!-- Antennas -->
+      <path d="M500 144 L486 125 M520 144 L534 125" stroke="#ff0055" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="486" cy="125" r="3.5" fill="#ff0055"/>
+      <circle cx="534" cy="125" r="3.5" fill="#ff0055"/>
+
+      <!-- Head and Bug Eyes -->
+      <g id="e-head">
+        <circle cx="510" cy="160" r="18" fill="#16080d" stroke="#ff0055" stroke-width="4"/>
+        <path d="M498 156 L508 162 M522 156 L512 162" stroke="#ff0055" stroke-width="4" stroke-linecap="round"/>
+      </g>
+
+      <!-- Spine and Chest Armor Lines -->
+      <path d="M510 178 L510 240" stroke="#ff0055" stroke-width="8" stroke-linecap="round"/>
+      <path d="M500 194 H520 M498 208 H522 M500 222 H520" stroke="#ff0055" stroke-width="2" opacity="0.6"/>
+
+      <!-- Guarding Claws -->
+      <path d="M510 192 L478 205 L458 192" stroke="#ff0055" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="456" cy="190" r="7.5" fill="#ff0055"/>
+
+      <path d="M510 192 L542 205 L562 192" stroke="#ff0055" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="564" cy="190" r="7.5" fill="#ff0055"/>
+
+      <!-- Insectoid Legs -->
+      <path d="M510 240 L482 278 L465 320" stroke="#ff0055" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M465 320 L452 320" stroke="#ff0055" stroke-width="4" stroke-linecap="round"/>
+
+      <path d="M510 240 L538 278 L555 320" stroke="#ff0055" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M555 320 L568 320" stroke="#ff0055" stroke-width="4" stroke-linecap="round"/>
+    </g>
+
+    <!-- ========================================================================
+         IMPACT VFX AND FLOATING ARCADE TEXT
+         ======================================================================== -->
+    <g id="impact-vfx">
+      <!-- Expanding Shockwave Ring -->
+      <circle id="vfx-ring" cx="460" cy="190" r="10" fill="none" stroke="#ffffff"/>
+
+      <!-- Explosive Starburst Ray Lines -->
+      <g id="vfx-sparks" stroke="#00f0ff" stroke-width="4" stroke-linecap="round">
+        <line x1="460" y1="190" x2="410" y2="140"/>
+        <line x1="460" y1="190" x2="510" y2="140"/>
+        <line x1="460" y1="190" x2="510" y2="240"/>
+        <line x1="460" y1="190" x2="410" y2="240"/>
+        <line x1="460" y1="190" x2="460" y2="120"/>
+        <line x1="460" y1="190" x2="460" y2="260"/>
+        <line x1="460" y1="190" x2="390" y2="190"/>
+        <line x1="460" y1="190" x2="530" y2="190"/>
+      </g>
+
+      <!-- Floating Damage / K.O Text -->
+      <g id="vfx-text" class="mono" font-weight="900" text-anchor="middle">
+        <text x="460" y="130" font-size="26" fill="#00ff88">K.O! BUGS FIXED</text>
+        <text x="460" y="152" font-size="14" fill="#ffcc00">-9999 ERRORS</text>
+      </g>
+    </g>
+
+  </g> <!-- END STAGE SHAKE -->
+
+  <!-- ==========================================================================
+       5. HEADER AND TECH STACK BADGES
+       ========================================================================== -->
+  <text x="30" y="36" class="mono" font-size="12" letter-spacing="2" fill="#8b949e">DEVELOPER BATTLE // AAA ANIMATION</text>
+  <text x="30" y="66" class="ui" font-size="24" font-weight="800" fill="#ffffff">Lucas Lydio</text>
+  <text x="30" y="86" class="mono" font-size="11" fill="#00f0ff">FULL-STACK STICK FIGHTER</text>
+
+  <!-- Health Bars -->
+  <rect x="30" y="105" width="200" height="10" rx="5" fill="#161b22"/>
+  <rect x="30" y="105" width="192" height="10" rx="5" fill="#00f0ff" filter="url(#cyanGlow)"/>
+
+  <text x="720" y="96" text-anchor="end" class="mono" font-size="11" fill="#ff0055">BUG.EXE</text>
+  <rect x="520" y="105" width="200" height="10" rx="5" fill="#161b22"/>
+  <rect x="520" y="105" width="200" height="10" rx="5" fill="#ff0055" filter="url(#redGlow)">
+    <animate attributeName="width" values="200;200;200;20;20;200" keyTimes="0;0.36;0.37;0.44;0.75;1" dur="4.0s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Footer Badges -->
+  <g class="mono" font-size="10" transform="translate(0, 30)">
+    <g transform="translate(130 335)">
+      <rect width="78" height="24" rx="5" fill="#00f0ff" fill-opacity="0.08" stroke="#00f0ff"/>
+      <text x="39" y="16" text-anchor="middle" fill="#00f0ff">BACKEND</text>
+    </g>
+    <g transform="translate(220 335)">
+      <rect width="84" height="24" rx="5" fill="#00f0ff" fill-opacity="0.08" stroke="#00f0ff"/>
+      <text x="42" y="16" text-anchor="middle" fill="#00f0ff">FRONTEND</text>
+    </g>
+    <g transform="translate(316 335)">
+      <rect width="66" height="24" rx="5" fill="#00f0ff" fill-opacity="0.08" stroke="#00f0ff"/>
+      <text x="33" y="16" text-anchor="middle" fill="#00f0ff">CI/CD</text>
+    </g>
+    <g transform="translate(394 335)">
+      <rect width="72" height="24" rx="5" fill="#00f0ff" fill-opacity="0.08" stroke="#00f0ff"/>
+      <text x="36" y="16" text-anchor="middle" fill="#00f0ff">CLOUD</text>
+    </g>
+    <g transform="translate(478 335)">
+      <rect width="78" height="24" rx="5" fill="#ff0055" fill-opacity="0.08" stroke="#ff0055"/>
+      <text x="39" y="16" text-anchor="middle" fill="#ff0055">BUGS</text>
+    </g>
   </g>
-
-  <!-- ==============================
-       PLAYER ENERGY SHOT
-       ============================== -->
-
-  <g id="projectile">
-    <circle
-      cx="226"
-      cy="218"
-      r="7"
-      fill="#00f0ff"
-      filter="url(#cyanGlow)"
-    />
-
-    <circle
-      cx="226"
-      cy="218"
-      r="14"
-      fill="none"
-      stroke="#00f0ff"
-      opacity="0.4"
-    />
-  </g>
-
-  <!-- ==============================
-       ENEMY STICK FIGURE
-       ============================== -->
-
-  <g
-    id="enemy"
-    stroke="#ff0055"
-    stroke-width="7"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    filter="url(#redGlow)"
-  >
-
-    <!-- head -->
-
-    <circle
-      cx="385"
-      cy="178"
-      r="21"
-      fill="#16080d"
-    />
-
-    <!-- angry eyes -->
-
-    <g
-      id="enemy-eyes"
-      stroke-width="4"
-    >
-      <path d="M374 174 L381 178"/>
-      <path d="M396 174 L389 178"/>
-    </g>
-
-    <!-- antenna -->
-
-    <path d="M385 157 L385 146"/>
-    <circle
-      cx="385"
-      cy="141"
-      r="4"
-      fill="#ff0055"
-      stroke="none"
-    />
-
-    <!-- body -->
-
-    <path d="M385 201 L385 256"/>
-
-    <!-- arms -->
-
-    <path d="M384 214 L350 231"/>
-    <path d="M386 214 L419 232"/>
-
-    <!-- legs -->
-
-    <path d="M385 256 L354 298"/>
-    <path d="M385 256 L418 298"/>
-
-  </g>
-
-  <!-- ==============================
-       HIT EFFECT
-       ============================== -->
-
-  <g
-    id="impact"
-    stroke="#ffffff"
-    stroke-width="4"
-    stroke-linecap="round"
-  >
-
-    <path d="M330 183 L330 165"/>
-    <path d="M330 228 L330 247"/>
-
-    <path d="M308 205 L290 205"/>
-    <path d="M352 205 L370 205"/>
-
-    <path d="M314 189 L301 176"/>
-    <path d="M346 221 L359 234"/>
-
-    <path d="M346 189 L359 176"/>
-    <path d="M314 221 L301 234"/>
-
-  </g>
-
-  <!-- ==============================
-       BATTLE TEXT
-       ============================== -->
-
-  <text
-    id="fixed-text"
-    x="335"
-    y="165"
-    class="mono"
-    font-size="18"
-    font-weight="700"
-    fill="#00ff88"
-    text-anchor="middle"
-  >
-    FIXED!
-  </text>
-
-  <text
-    id="damage"
-    x="410"
-    y="158"
-    class="mono"
-    font-size="12"
-    font-weight="700"
-    fill="#ffcc00"
-  >
-    -42 BUGS
-  </text>
-
-  <!-- ==============================
-       FLOOR
-       ============================== -->
-
-  <path
-    d="M40 310 H510"
-    stroke="#30363d"
-    stroke-width="3"
-  />
-
-  <path
-    d="M70 320 H180"
-    stroke="#00f0ff"
-    stroke-width="2"
-    opacity="0.25"
-  />
-
-  <path
-    d="M360 320 H485"
-    stroke="#ff0055"
-    stroke-width="2"
-    opacity="0.25"
-  />
-
-  <!-- ==============================
-       STACK BAR
-       ============================== -->
-
-  <g
-    class="mono"
-    font-size="10"
-  >
-
-    <g transform="translate(54 335)">
-      <rect
-        width="72"
-        height="25"
-        rx="5"
-        fill="#00f0ff"
-        fill-opacity="0.08"
-        stroke="#00f0ff"
-      />
-      <text
-        x="36"
-        y="17"
-        text-anchor="middle"
-        fill="#00f0ff"
-      >
-        BACKEND
-      </text>
-    </g>
-
-    <g transform="translate(138 335)">
-      <rect
-        width="76"
-        height="25"
-        rx="5"
-        fill="#00f0ff"
-        fill-opacity="0.08"
-        stroke="#00f0ff"
-      />
-      <text
-        x="38"
-        y="17"
-        text-anchor="middle"
-        fill="#00f0ff"
-      >
-        FRONTEND
-      </text>
-    </g>
-
-    <g transform="translate(226 335)">
-      <rect
-        width="62"
-        height="25"
-        rx="5"
-        fill="#00f0ff"
-        fill-opacity="0.08"
-        stroke="#00f0ff"
-      />
-      <text
-        x="31"
-        y="17"
-        text-anchor="middle"
-        fill="#00f0ff"
-      >
-        CI/CD
-      </text>
-    </g>
-
-    <g transform="translate(300 335)">
-      <rect
-        width="66"
-        height="25"
-        rx="5"
-        fill="#00f0ff"
-        fill-opacity="0.08"
-        stroke="#00f0ff"
-      />
-      <text
-        x="33"
-        y="17"
-        text-anchor="middle"
-        fill="#00f0ff"
-      >
-        CLOUD
-      </text>
-    </g>
-
-    <g transform="translate(378 335)">
-      <rect
-        width="72"
-        height="25"
-        rx="5"
-        fill="#ff0055"
-        fill-opacity="0.08"
-        stroke="#ff0055"
-      />
-      <text
-        x="36"
-        y="17"
-        text-anchor="middle"
-        fill="#ff0055"
-      >
-        BUGS 💀
-      </text>
-    </g>
-
-  </g>
-
 </svg>

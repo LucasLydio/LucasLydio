@@ -10,7 +10,6 @@
 <div align="center">
   <img src="./assets/profile-card.svg" alt="Profile Card" />
   <br />
-  <img src="./assets/bomberman.gif" width="100" alt="Bomberman" />
 </div>
 
 <div align="left">
