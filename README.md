@@ -12,7 +12,7 @@
   <br />
 </div>
 
-<div align="left">
+
 **Hi, I'm Lucas — a Full Stack Developer who likes building reliable systems and keeping things fun while shipping.**  
 
 I enjoy working across the full flow:  
@@ -20,9 +20,6 @@ I enjoy working across the full flow:
 
 When I’m coding, I’m usually thinking about how to make software more:
 **clear, scalable, testable, and easier to operate**.
-
-</div>
-
 </div>
 
 <div align="center">
