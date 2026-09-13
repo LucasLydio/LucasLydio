@@ -1,4 +1,4 @@
-<svg fill="none" width="550" height="180" viewBox="0 0 550 180" xmlns="http://www.w3.org/2000/svg">
+<svg fill="none" width="100%" height="auto" viewBox="0 0 550 380" xmlns="http://www.w3.org/2000/svg">
   <foreignObject width="100%" height="100%">
     <div xmlns="http://www.w3.org/1999/xhtml">
       <style>
@@ -31,14 +31,14 @@
         }
         .name {
           color: #00f0ff;
-          font-size: 20px;
+          font-size: 1.5rem;
           font-weight: 700;
           margin: 0 0 2px 0;
           letter-spacing: 1px;
         }
         .role {
           color: #ff0055;
-          font-size: 13px;
+          font-size: 1.4rem;
           font-weight: 600;
           margin: 0 0 10px 0;
           text-transform: uppercase;
@@ -53,11 +53,11 @@
           border: 1px solid #00f0ff;
           border-radius: 4px;
           padding: 2px 8px;
-          font-size: 11px;
+          font-size: 1.2rem;
           margin-right: 4px;
         }
         .bio {
-          font-size: 12px;
+          font-size: 1.2rem;
           color: #8b949e;
           line-height: 1.4;
         }
@@ -69,9 +69,10 @@
           <div class="name">Lucas Lydio</div>
           <div class="role">PLAYER 1 • FULL-STACK DEVELOPER</div>
           <div class="tags">
-            <span class="tag">TypeScript</span>
-            <span class="tag">React</span>
-            <span class="tag">Node.js</span>
+            <span class="tag">Backend</span>
+            <span class="tag">Frontend</span>
+            <span class="tag">CI/CD</span>
+            <span class="tag">AI</span>
           </div>
           <div class="bio">
             🎮 Building web apps &amp; breaking code<br/>
