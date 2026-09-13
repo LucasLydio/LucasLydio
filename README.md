@@ -13,7 +13,6 @@
 
 <div align="center">
 
-<br/><br/>
 
 <a href="https://github.com/LucasLydio?tab=repositories">
   Explore my repositories →
