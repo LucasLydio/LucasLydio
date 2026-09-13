@@ -46,7 +46,7 @@ I care about software that is easy to **understand → test → deploy → obser
 
 # Stack
 
-## Backend & Java
+## Backend
 
 <div align="center">
 
