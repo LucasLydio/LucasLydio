@@ -1,85 +1,755 @@
-<svg fill="none" width="400px" height="auto" viewBox="0 0 550 380" xmlns="http://www.w3.org/2000/svg">
-  <foreignObject width="100%" height="100%">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-      <style>
-        .container {
-          background: #0d1117;
-          border: 2px solid #00f0ff;
-          border-radius: 12px;
-          padding: 20px;
-          display: flex;
-          align-items: center;
-          gap: 20px;
-          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-          box-shadow: 0 0 15px rgba(0, 240, 255, 0.25);
-          animation: glow 3s infinite alternate;
-        }
-        @keyframes glow {
-          0% { box-shadow: 0 0 8px rgba(0, 240, 255, 0.3); border-color: #00f0ff; }
-          100% { box-shadow: 0 0 20px rgba(255, 0, 85, 0.6); border-color: #ff0055; }
-        }
-        .avatar {
-          width: 95px;
-          height: 95px;
-          border-radius: 50%;
-          border: 3px solid #ff0055;
-          object-fit: cover;
-          flex-shrink: 0;
-        }
-        .info {
-          color: #ffffff;
-        }
-        .name {
-          color: #00f0ff;
-          font-size: 1.5rem;
-          font-weight: 700;
-          margin: 0 0 2px 0;
-          letter-spacing: 1px;
-        }
-        .role {
-          color: #ff0055;
-          font-size: 1.4rem;
-          font-weight: 600;
-          margin: 0 0 10px 0;
-          text-transform: uppercase;
-        }
-        .tags {
-          margin-bottom: 8px;
-        }
-        .tag {
-          display: inline-block;
-          background: rgba(0, 240, 255, 0.1);
-          color: #00f0ff;
-          border: 1px solid #00f0ff;
-          border-radius: 4px;
-          padding: 2px 8px;
-          font-size: 1.2rem;
-          margin-right: 4px;
-        }
-        .bio {
-          font-size: 1.2rem;
-          color: #8b949e;
-          line-height: 1.4;
-        }
-      </style>
+<svg
+  width="400"
+  height="auto"
+  viewBox="0 0 550 380"
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">Lucas Lydio - Full Stack Developer Battle</title>
+  <desc id="desc">
+    Animated stick battle showing Lucas fighting software bugs.
+  </desc>
 
-      <div class="container">
-        <img class="avatar" src="./profile/profilegit.webp" alt="Profile Photo" />
-        <div class="info">
-          <div class="name">Lucas Lydio</div>
-          <div class="role">PLAYER 1 • FULL-STACK DEVELOPER</div>
-          <div class="tags">
-            <span class="tag">Backend</span>
-            <span class="tag">Frontend</span>
-            <span class="tag">CI/CD</span>
-            <span class="tag">AI</span>
-          </div>
-          <div class="bio">
-            🎮 Building web apps &amp; breaking code<br/>
-            📍 Location: Online
-          </div>
-        </div>
-      </div>
-    </div>
-  </foreignObject>
+  <defs>
+    <!-- Background -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070b10"/>
+      <stop offset="100%" stop-color="#0d1117"/>
+    </linearGradient>
+
+    <!-- Player -->
+    <linearGradient id="playerGradient" x1="0" x2="1">
+      <stop offset="0%" stop-color="#00f0ff"/>
+      <stop offset="100%" stop-color="#00a8ff"/>
+    </linearGradient>
+
+    <!-- Enemy -->
+    <linearGradient id="enemyGradient" x1="0" x2="1">
+      <stop offset="0%" stop-color="#ff0055"/>
+      <stop offset="100%" stop-color="#ff5e00"/>
+    </linearGradient>
+
+    <!-- Glow -->
+    <filter id="cyanGlow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="redGlow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    /* ==============================
+       GLOBAL
+       ============================== */
+
+    .mono {
+      font-family:
+        "JetBrains Mono",
+        "SFMono-Regular",
+        Consolas,
+        monospace;
+    }
+
+    .ui {
+      font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+    }
+
+    /* ==============================
+       PLAYER
+       ============================== */
+
+    #player {
+      transform-origin: 175px 248px;
+      animation: playerIdle 1.5s ease-in-out infinite;
+    }
+
+    #player-arm {
+      transform-origin: 181px 210px;
+      animation: punch 2.8s ease-in-out infinite;
+    }
+
+    #player-body {
+      animation: bodyAttack 2.8s ease-in-out infinite;
+    }
+
+    /* ==============================
+       ENEMY
+       ============================== */
+
+    #enemy {
+      transform-origin: 385px 244px;
+      animation: enemyHit 2.8s ease-in-out infinite;
+    }
+
+    #enemy-eyes {
+      animation: enemyBlink 3.5s infinite;
+    }
+
+    /* ==============================
+       EFFECTS
+       ============================== */
+
+    #impact {
+      transform-origin: 330px 205px;
+      animation: impactFlash 2.8s ease-out infinite;
+    }
+
+    #fixed-text {
+      animation: fixedText 2.8s ease-out infinite;
+    }
+
+    #damage {
+      animation: damageText 2.8s ease-out infinite;
+    }
+
+    #projectile {
+      animation: projectile 2.8s ease-out infinite;
+    }
+
+    .grid-line {
+      animation: gridPulse 4s ease-in-out infinite alternate;
+    }
+
+    /* ==============================
+       ANIMATIONS
+       ============================== */
+
+    @keyframes playerIdle {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-3px);
+      }
+    }
+
+    @keyframes bodyAttack {
+      0%, 48%, 100% {
+        transform: translateX(0);
+      }
+
+      56% {
+        transform: translateX(12px);
+      }
+
+      68% {
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes punch {
+      0%, 45%, 100% {
+        transform: rotate(0deg);
+      }
+
+      53% {
+        transform: rotate(-12deg);
+      }
+
+      58% {
+        transform: rotate(-68deg);
+      }
+
+      68% {
+        transform: rotate(0deg);
+      }
+    }
+
+    @keyframes enemyHit {
+      0%, 55%, 100% {
+        transform: translateX(0) rotate(0deg);
+      }
+
+      61% {
+        transform: translateX(13px) rotate(5deg);
+      }
+
+      68% {
+        transform: translateX(-5px) rotate(-3deg);
+      }
+
+      76% {
+        transform: translateX(0) rotate(0deg);
+      }
+    }
+
+    @keyframes enemyBlink {
+      0%, 92%, 100% {
+        opacity: 1;
+      }
+
+      95% {
+        opacity: 0.15;
+      }
+    }
+
+    @keyframes impactFlash {
+      0%, 53%, 72%, 100% {
+        opacity: 0;
+        transform: scale(0.2) rotate(0deg);
+      }
+
+      58% {
+        opacity: 1;
+        transform: scale(1.3) rotate(20deg);
+      }
+
+      65% {
+        opacity: 0.3;
+        transform: scale(1.8) rotate(45deg);
+      }
+    }
+
+    @keyframes fixedText {
+      0%, 57%, 100% {
+        opacity: 0;
+        transform: translateY(0);
+      }
+
+      62% {
+        opacity: 1;
+        transform: translateY(-4px);
+      }
+
+      78% {
+        opacity: 0;
+        transform: translateY(-28px);
+      }
+    }
+
+    @keyframes damageText {
+      0%, 57%, 100% {
+        opacity: 0;
+        transform: translateY(0);
+      }
+
+      61% {
+        opacity: 1;
+      }
+
+      78% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+    }
+
+    @keyframes projectile {
+      0%, 48%, 100% {
+        opacity: 0;
+        transform: translateX(0);
+      }
+
+      51% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      60% {
+        opacity: 1;
+        transform: translateX(115px);
+      }
+
+      62% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes gridPulse {
+      from {
+        opacity: 0.08;
+      }
+
+      to {
+        opacity: 0.22;
+      }
+    }
+  </style>
+
+  <!-- ==============================
+       BACKGROUND
+       ============================== -->
+
+  <rect
+    x="2"
+    y="2"
+    width="546"
+    height="376"
+    rx="14"
+    fill="url(#bg)"
+    stroke="#30363d"
+    stroke-width="2"
+  />
+
+  <!-- Grid -->
+
+  <g
+    stroke="#00f0ff"
+    stroke-width="0.7"
+    opacity="0.12"
+    class="grid-line"
+  >
+    <path d="M0 80 H550"/>
+    <path d="M0 120 H550"/>
+    <path d="M0 160 H550"/>
+    <path d="M0 200 H550"/>
+    <path d="M0 240 H550"/>
+    <path d="M0 280 H550"/>
+    <path d="M0 320 H550"/>
+
+    <path d="M50 0 V380"/>
+    <path d="M100 0 V380"/>
+    <path d="M150 0 V380"/>
+    <path d="M200 0 V380"/>
+    <path d="M250 0 V380"/>
+    <path d="M300 0 V380"/>
+    <path d="M350 0 V380"/>
+    <path d="M400 0 V380"/>
+    <path d="M450 0 V380"/>
+    <path d="M500 0 V380"/>
+  </g>
+
+  <!-- ==============================
+       HEADER
+       ============================== -->
+
+  <text
+    x="25"
+    y="32"
+    class="mono"
+    font-size="12"
+    letter-spacing="2"
+    fill="#8b949e"
+  >
+    DEVELOPER BATTLE // ROUND 01
+  </text>
+
+  <text
+    x="25"
+    y="62"
+    class="ui"
+    font-size="23"
+    font-weight="700"
+    fill="#ffffff"
+  >
+    Lucas Lydio
+  </text>
+
+  <text
+    x="25"
+    y="82"
+    class="mono"
+    font-size="11"
+    fill="#00f0ff"
+  >
+    FULL-STACK DEVELOPER
+  </text>
+
+  <!-- ==============================
+       HEALTH BARS
+       ============================== -->
+
+  <!-- Player HP -->
+
+  <text
+    x="25"
+    y="112"
+    class="mono"
+    font-size="10"
+    fill="#00f0ff"
+  >
+    PLAYER 1
+  </text>
+
+  <rect
+    x="25"
+    y="120"
+    width="180"
+    height="10"
+    rx="5"
+    fill="#161b22"
+  />
+
+  <rect
+    x="25"
+    y="120"
+    width="172"
+    height="10"
+    rx="5"
+    fill="url(#playerGradient)"
+  />
+
+  <!-- Enemy HP -->
+
+  <text
+    x="525"
+    y="112"
+    text-anchor="end"
+    class="mono"
+    font-size="10"
+    fill="#ff0055"
+  >
+    BUG.EXE
+  </text>
+
+  <rect
+    x="345"
+    y="120"
+    width="180"
+    height="10"
+    rx="5"
+    fill="#161b22"
+  />
+
+  <rect
+    x="365"
+    y="120"
+    width="160"
+    height="10"
+    rx="5"
+    fill="url(#enemyGradient)"
+  >
+    <animate
+      attributeName="width"
+      values="160;160;118;118;160"
+      keyTimes="0;0.55;0.64;0.85;1"
+      dur="2.8s"
+      repeatCount="indefinite"
+    />
+  </rect>
+
+  <!-- ==============================
+       PLAYER STICK FIGURE
+       ============================== -->
+
+  <g
+    id="player"
+    stroke="#00f0ff"
+    stroke-width="7"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    filter="url(#cyanGlow)"
+  >
+
+    <!-- head -->
+
+    <circle
+      cx="175"
+      cy="178"
+      r="18"
+      fill="#0d1117"
+    />
+
+    <!-- body -->
+
+    <g id="player-body">
+
+      <path d="M175 198 L175 255"/>
+
+      <!-- left arm -->
+
+      <path d="M174 210 L140 232"/>
+
+      <!-- punching arm -->
+
+      <g id="player-arm">
+        <path d="M181 210 L220 218"/>
+        <circle
+          cx="225"
+          cy="219"
+          r="7"
+          fill="#00f0ff"
+          stroke="none"
+        />
+      </g>
+
+      <!-- legs -->
+
+      <path d="M175 255 L145 298"/>
+      <path d="M175 255 L210 296"/>
+
+    </g>
+
+  </g>
+
+  <!-- ==============================
+       PLAYER ENERGY SHOT
+       ============================== -->
+
+  <g id="projectile">
+    <circle
+      cx="226"
+      cy="218"
+      r="7"
+      fill="#00f0ff"
+      filter="url(#cyanGlow)"
+    />
+
+    <circle
+      cx="226"
+      cy="218"
+      r="14"
+      fill="none"
+      stroke="#00f0ff"
+      opacity="0.4"
+    />
+  </g>
+
+  <!-- ==============================
+       ENEMY STICK FIGURE
+       ============================== -->
+
+  <g
+    id="enemy"
+    stroke="#ff0055"
+    stroke-width="7"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    filter="url(#redGlow)"
+  >
+
+    <!-- head -->
+
+    <circle
+      cx="385"
+      cy="178"
+      r="21"
+      fill="#16080d"
+    />
+
+    <!-- angry eyes -->
+
+    <g
+      id="enemy-eyes"
+      stroke-width="4"
+    >
+      <path d="M374 174 L381 178"/>
+      <path d="M396 174 L389 178"/>
+    </g>
+
+    <!-- antenna -->
+
+    <path d="M385 157 L385 146"/>
+    <circle
+      cx="385"
+      cy="141"
+      r="4"
+      fill="#ff0055"
+      stroke="none"
+    />
+
+    <!-- body -->
+
+    <path d="M385 201 L385 256"/>
+
+    <!-- arms -->
+
+    <path d="M384 214 L350 231"/>
+    <path d="M386 214 L419 232"/>
+
+    <!-- legs -->
+
+    <path d="M385 256 L354 298"/>
+    <path d="M385 256 L418 298"/>
+
+  </g>
+
+  <!-- ==============================
+       HIT EFFECT
+       ============================== -->
+
+  <g
+    id="impact"
+    stroke="#ffffff"
+    stroke-width="4"
+    stroke-linecap="round"
+  >
+
+    <path d="M330 183 L330 165"/>
+    <path d="M330 228 L330 247"/>
+
+    <path d="M308 205 L290 205"/>
+    <path d="M352 205 L370 205"/>
+
+    <path d="M314 189 L301 176"/>
+    <path d="M346 221 L359 234"/>
+
+    <path d="M346 189 L359 176"/>
+    <path d="M314 221 L301 234"/>
+
+  </g>
+
+  <!-- ==============================
+       BATTLE TEXT
+       ============================== -->
+
+  <text
+    id="fixed-text"
+    x="335"
+    y="165"
+    class="mono"
+    font-size="18"
+    font-weight="700"
+    fill="#00ff88"
+    text-anchor="middle"
+  >
+    FIXED!
+  </text>
+
+  <text
+    id="damage"
+    x="410"
+    y="158"
+    class="mono"
+    font-size="12"
+    font-weight="700"
+    fill="#ffcc00"
+  >
+    -42 BUGS
+  </text>
+
+  <!-- ==============================
+       FLOOR
+       ============================== -->
+
+  <path
+    d="M40 310 H510"
+    stroke="#30363d"
+    stroke-width="3"
+  />
+
+  <path
+    d="M70 320 H180"
+    stroke="#00f0ff"
+    stroke-width="2"
+    opacity="0.25"
+  />
+
+  <path
+    d="M360 320 H485"
+    stroke="#ff0055"
+    stroke-width="2"
+    opacity="0.25"
+  />
+
+  <!-- ==============================
+       STACK BAR
+       ============================== -->
+
+  <g
+    class="mono"
+    font-size="10"
+  >
+
+    <g transform="translate(54 335)">
+      <rect
+        width="72"
+        height="25"
+        rx="5"
+        fill="#00f0ff"
+        fill-opacity="0.08"
+        stroke="#00f0ff"
+      />
+      <text
+        x="36"
+        y="17"
+        text-anchor="middle"
+        fill="#00f0ff"
+      >
+        BACKEND
+      </text>
+    </g>
+
+    <g transform="translate(138 335)">
+      <rect
+        width="76"
+        height="25"
+        rx="5"
+        fill="#00f0ff"
+        fill-opacity="0.08"
+        stroke="#00f0ff"
+      />
+      <text
+        x="38"
+        y="17"
+        text-anchor="middle"
+        fill="#00f0ff"
+      >
+        FRONTEND
+      </text>
+    </g>
+
+    <g transform="translate(226 335)">
+      <rect
+        width="62"
+        height="25"
+        rx="5"
+        fill="#00f0ff"
+        fill-opacity="0.08"
+        stroke="#00f0ff"
+      />
+      <text
+        x="31"
+        y="17"
+        text-anchor="middle"
+        fill="#00f0ff"
+      >
+        CI/CD
+      </text>
+    </g>
+
+    <g transform="translate(300 335)">
+      <rect
+        width="66"
+        height="25"
+        rx="5"
+        fill="#00f0ff"
+        fill-opacity="0.08"
+        stroke="#00f0ff"
+      />
+      <text
+        x="33"
+        y="17"
+        text-anchor="middle"
+        fill="#00f0ff"
+      >
+        CLOUD
+      </text>
+    </g>
+
+    <g transform="translate(378 335)">
+      <rect
+        width="72"
+        height="25"
+        rx="5"
+        fill="#ff0055"
+        fill-opacity="0.08"
+        stroke="#ff0055"
+      />
+      <text
+        x="36"
+        y="17"
+        text-anchor="middle"
+        fill="#ff0055"
+      >
+        BUGS 💀
+      </text>
+    </g>
+
+  </g>
+
 </svg>
