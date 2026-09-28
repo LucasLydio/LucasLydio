@@ -1,32 +1,35 @@
 <!--
   LucasLydio GitHub Profile
-  Direction: vertical, illustration-led, no table/flex grid
-  Free illustrations: unDraw (https://undraw.co/license)
+  Brand: @souhdev / Lucas Lydio
+  First increment: pixel-console header and introduction.
+  Existing sections below Stack are retained for later focused updates.
 -->
-## Hello!
 
 <div align="center">
 
-<img src="./assets/gifs/bomber_animation.gif" width="160" alt="Bomberman running animation" />
+<img src="./assets/hero.svg" width="100%" alt="@souhdev — Lucas Lydio, full-stack developer. A teal pixel-console screen with Lucas's waving pixel portrait." />
 
-</div>
+# Hi, I'm Lucas — @souhdev
 
-<div align="center">
+**Full-stack developer. Curious by default. Building one level at a time.**
 
-
-<a href="https://github.com/LucasLydio?tab=repositories">
-  Explore my repositories →
-</a>
+[Explore my repositories →](https://github.com/LucasLydio?tab=repositories) · [LinkedIn](https://www.linkedin.com/in/lucas-lydio-8231b436b/) · [Email](mailto:lucaslydiodev26@gmail.com)
 
 </div>
 
 ---
 
-## About me
+## 01 / Player profile
 
-I work across the full application lifecycle: **APIs, interfaces, data, testing, deployment and observability**.
+I build web applications, APIs, and integrations, working across **interfaces,
+data, testing, deployment, and observability**. My background in technical support
+keeps me close to the people and production systems behind the code.
 
 I care about software that is easy to **understand → test → deploy → observe → evolve**.
+
+Around here, you'll find the projects I'm building and the tools I'm learning.
+On social media, I'm **@souhdev**, sharing my corner of development with fellow
+developers and tech teams.
 
 ---
 
